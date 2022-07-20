@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Analytics on Rishav Mishra</title>
+    <link>https://RishavMishraRM.github.io/tags/analytics/</link>
+    <description>Recent content in Analytics on Rishav Mishra</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://RishavMishraRM.github.io/tags/analytics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>THE SPARKS FOUNDATION</title>
+      <link>https://RishavMishraRM.github.io/posts/html-and-css-only-tabs/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://RishavMishraRM.github.io/posts/html-and-css-only-tabs/</guid>
+      <description>This was my Second Internship in College. This internship was completed on 2nd of February 2021.
+Here I was working on a Tableau based Dashboard projects in real-time and some of the new and small Machine Learning contents. This helped me in learning new things in Analytics Domain and some ML technologies.</description>
+    </item>
+    
+  </channel>
+</rss>

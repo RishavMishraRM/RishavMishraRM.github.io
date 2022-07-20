@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Vision on Rishav Mishra</title>
+    <link>https://RishavMishraRM.github.io/categories/computer-vision/</link>
+    <description>Recent content in Computer Vision on Rishav Mishra</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://RishavMishraRM.github.io/categories/computer-vision/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BVG INDIA LTD.</title>
+      <link>https://RishavMishraRM.github.io/posts/emoji-support/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://RishavMishraRM.github.io/posts/emoji-support/</guid>
+      <description>This was my First Internship in College. This internship was completed on 12th of October 2021.
+Here I was working on a computer vision based attendance system project in real-time camera vision. This helped me in learning new things in Computer Vision and tracking a human in the system.</description>
+    </item>
+    
+  </channel>
+</rss>

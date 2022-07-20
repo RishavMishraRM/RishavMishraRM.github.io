@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Snowflake on Rishav Mishra</title>
+    <link>https://RishavMishraRM.github.io/categories/snowflake/</link>
+    <description>Recent content in Snowflake on Rishav Mishra</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 02 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://RishavMishraRM.github.io/categories/snowflake/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Highradius</title>
+      <link>https://RishavMishraRM.github.io/posts/more-rich-content/</link>
+      <pubDate>Mon, 02 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://RishavMishraRM.github.io/posts/more-rich-content/</guid>
+      <description>This was my Fifth Internship in College. This internship was completed on 1st of July 2022.
+Here I was working on a Full Stack analytics project where we were taking Data from Salesforce and then use ETL to bring data to Snowflake a SQL based system which gets connected to Tableau and then using that we make the forecast on the Data provided by other teams. This helped me in learning new things in Analytics Domain and in Operations Team of a Organisation.</description>
+    </item>
+    
+  </channel>
+</rss>

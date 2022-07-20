@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Natural Language Processing on Rishav Mishra</title>
+    <link>https://RishavMishraRM.github.io/categories/natural-language-processing/</link>
+    <description>Recent content in Natural Language Processing on Rishav Mishra</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://RishavMishraRM.github.io/categories/natural-language-processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NIT Patna</title>
+      <link>https://RishavMishraRM.github.io/posts/markdown-syntax/</link>
+      <pubDate>Wed, 03 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://RishavMishraRM.github.io/posts/markdown-syntax/</guid>
+      <description>This was my 4th Internship in College. This internship was completed on 2nd of June 2021.
+Here I was working on a Natural Language Processing based Correction of Phrases spoken by a person project in real-time. This helped me in learning new things in Natural Language Processing and tracking a Language spoken by human for the system.</description>
+    </item>
+    
+  </channel>
+</rss>
