@@ -268,64 +268,87 @@ document.querySelectorAll(".nav-link").forEach(item => {
     }
 });
 
-/*==================== PREMIUM AMBIENT BACKGROUND SOUND ====================*/
-let audioContext;
-let ambientStarted = false;
+/*==================== BACKGROUND MUSIC SYSTEM ====================*/
+const bgMusic = new Audio('https://cdn.pixabay.com/audio/2022/02/07/audio_12809e4871.mp3'); // Ambient Piano Chill
+bgMusic.loop = true;
+bgMusic.volume = 0.4;
 
-function startAmbientSound() {
-    if (ambientStarted) return;
+// Add Music Toggle Button to UI
+const musicBtn = document.createElement('button');
+musicBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+musicBtn.className = 'music-control-btn';
+document.body.appendChild(musicBtn);
 
-    // Create Context
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-    audioContext = new AudioContext();
+// Style the button dynamically
+Object.assign(musicBtn.style, {
+    position: 'fixed',
+    bottom: '2rem',
+    left: '2rem',
+    zIndex: '1000',
+    background: 'var(--container-color)',
+    border: '1px solid rgba(255,255,255,0.1)',
+    color: 'var(--title-color)',
+    padding: '0.8rem',
+    borderRadius: '50%',
+    cursor: 'pointer',
+    aspectRatio: '1',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '1.2rem',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+    transition: 'all 0.3s ease'
+});
 
-    // Explicitly resume (essential for Chrome/Edge)
-    if (audioContext.state === 'suspended') {
-        audioContext.resume();
+// Hover effect
+musicBtn.onmouseover = () => musicBtn.style.transform = 'scale(1.1)';
+musicBtn.onmouseleave = () => musicBtn.style.transform = 'scale(1)';
+
+// Toggle Logic
+let isPlaying = false;
+
+const toggleMusic = () => {
+    if (isPlaying) {
+        bgMusic.pause();
+        musicBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        musicBtn.style.color = 'var(--title-color)';
+    } else {
+        bgMusic.play().then(() => {
+            musicBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            musicBtn.style.color = 'var(--first-color)';
+        }).catch(err => console.log("Audio play failed:", err));
     }
+    isPlaying = !isPlaying;
+};
 
-    /* --- 1. AMBIENT DRONE --- */
-    const masterGain = audioContext.createGain();
-    masterGain.gain.setValueAtTime(0, audioContext.currentTime);
-    masterGain.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 2); // Louder (0.5), faster fade (2s)
-    masterGain.connect(audioContext.destination);
+musicBtn.addEventListener('click', toggleMusic);
 
-    // Deep Drone (Raised frequency for laptop visibility)
-    const osc1 = audioContext.createOscillator();
-    osc1.type = 'sine';
-    osc1.frequency.value = 110; // A2 (Audible on standard speakers)
-    osc1.connect(masterGain);
+// Auto-start attempt (Low volume start)
+const attemptAutoPlay = () => {
+    bgMusic.play().then(() => {
+        isPlaying = true;
+        musicBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        musicBtn.style.color = 'var(--first-color)';
+        console.log("🎶 Background Music Auto-Started");
+    }).catch(() => {
+        console.log("Audio Autoplay Blocked - Waiting for interaction");
+    });
+};
 
-    // Texture (Harmonic)
-    const osc2 = audioContext.createOscillator();
-    osc2.type = 'triangle';
-    osc2.frequency.value = 220; // A3
-    const osc2Gain = audioContext.createGain();
-    osc2Gain.gain.value = 0.1; // Subtle harmonic
-    osc2.connect(osc2Gain);
-    osc2Gain.connect(masterGain);
+// Try immediately
+attemptAutoPlay();
 
-    osc1.start();
-    osc2.start();
-
-    ambientStarted = true;
-    console.log(`🌌 Ambient Started. Context State: ${audioContext.state}`);
-}
-
-// Attempt to play immediately on load
-startAmbientSound();
-
-// Resume AudioContext on ANY interaction (Required by Browsers)
-const resumeAudio = () => {
-    if (audioContext && audioContext.state === 'suspended') {
-        audioContext.resume();
-        console.log("Audio Context Resumed on Interaction");
+// Fallback: Unlock on first interaction
+const unlockAudio = () => {
+    if (!isPlaying) {
+        attemptAutoPlay();
+        // Remove listeners after first successful interaction attempt
+        document.removeEventListener('click', unlockAudio);
+        document.removeEventListener('scroll', unlockAudio);
+        document.removeEventListener('keydown', unlockAudio);
     }
 };
 
-// Listeners to unlock audio silently
-document.addEventListener('click', resumeAudio);
-document.addEventListener('touchstart', resumeAudio);
-document.addEventListener('keydown', resumeAudio);
-document.addEventListener('mousemove', resumeAudio);
-document.addEventListener('scroll', resumeAudio);
+document.addEventListener('click', unlockAudio);
+document.addEventListener('scroll', unlockAudio);
+document.addEventListener('keydown', unlockAudio);
