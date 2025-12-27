@@ -268,53 +268,71 @@ document.querySelectorAll(".nav-link").forEach(item => {
     }
 });
 
-/*==================== PREMIUM STARTUP SOUND (Web Audio API) ====================*/
-function playStartupSound() {
-    if (window.hasPlayedStartupSound) return;
+/*==================== PREMIUM AMBIENT BACKGROUND SOUND ====================*/
+let audioContext;
+let ambientStarted = false;
 
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContext) return;
+function startAmbientSound() {
+    if (ambientStarted) return;
 
-    const ctx = new AudioContext();
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
-    // Context must be resumed on some browsers even in handler
-    if (ctx.state === 'suspended') {
-        ctx.resume();
+    // Resume context if suspended (Browser Policy)
+    if (audioContext.state === 'suspended') {
+        audioContext.resume();
     }
 
-    const oscillator = ctx.createOscillator();
-    const gainNode = ctx.createGain();
+    // Master Gain (Volume Control)
+    const masterGain = audioContext.createGain();
+    masterGain.gain.setValueAtTime(0, audioContext.currentTime);
+    masterGain.gain.linearRampToValueAtTime(0.08, audioContext.currentTime + 5); // 5s fade in
+    masterGain.connect(audioContext.destination);
 
-    oscillator.type = 'sine';
-    oscillator.frequency.setValueAtTime(220, ctx.currentTime); // A3
-    oscillator.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 1); // Sweep to A5
+    // 1. Deep Drone (Base)
+    const osc1 = audioContext.createOscillator();
+    osc1.type = 'sine';
+    osc1.frequency.value = 60; // Deep B1
 
-    // Volume configuration
-    gainNode.gain.setValueAtTime(0, ctx.currentTime);
-    gainNode.gain.linearRampToValueAtTime(0.5, ctx.currentTime + 0.1); // Fade in
-    gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 2); // Fade out
+    // 2. Harmonic Pad (texture)
+    const osc2 = audioContext.createOscillator();
+    osc2.type = 'triangle';
+    osc2.frequency.value = 90; // Fifth above
+    const osc2Gain = audioContext.createGain();
+    osc2Gain.gain.value = 0.3;
 
-    oscillator.connect(gainNode);
-    gainNode.connect(ctx.destination);
+    // 3. LFO (Breathing Effect)
+    const lfo = audioContext.createOscillator();
+    lfo.type = 'sine';
+    lfo.frequency.value = 0.1; // Very slow cycle (10s)
+    const lfoGain = audioContext.createGain();
+    lfoGain.gain.value = 50; // Modulate frequency/filter
 
-    oscillator.start();
-    oscillator.stop(ctx.currentTime + 2);
+    // Connections
+    osc1.connect(masterGain);
 
-    window.hasPlayedStartupSound = true;
-    console.log("🔊 Premium Startup Sound Played");
+    osc2.connect(osc2Gain);
+    osc2Gain.connect(masterGain);
+
+    // Start everything
+    osc1.start();
+    osc2.start();
+    lfo.start();
+
+    ambientStarted = true;
+    console.log("🌌 Ambient Background Started");
 }
 
-// Initialize sound on first user interaction (Browser Policy)
-const initSound = () => {
-    playStartupSound();
-    // Cleanup listeners
-    document.removeEventListener('click', initSound);
-    document.removeEventListener('keydown', initSound);
-    document.removeEventListener('touchstart', initSound);
+// Triggers: Attempt on load (rarely works), ensure on interaction
+const initAmbient = () => {
+    startAmbientSound();
+    // Start listener cleanup
+    document.removeEventListener('click', initAmbient);
+    document.removeEventListener('keydown', initAmbient);
+    document.removeEventListener('touchstart', initAmbient);
 };
 
-// Global listeners to catch any first interaction
-document.addEventListener('click', initSound, { once: true });
-document.addEventListener('touchstart', initSound, { once: true });
-document.addEventListener('keydown', initSound, { once: true });
+// Listeners for first interaction
+document.addEventListener('click', initAmbient, { once: true });
+document.addEventListener('touchstart', initAmbient, { once: true });
+document.addEventListener('keydown', initAmbient, { once: true });
 
