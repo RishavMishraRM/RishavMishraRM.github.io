@@ -1204,7 +1204,7 @@ body.light-theme .nav-menu {
 
 /* RESPONSIVE MEDIA QUERIES */
 /* RESPONSIVE MEDIA QUERIES */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     .header {
         top: 0;
         bottom: auto;
@@ -1286,17 +1286,22 @@ body.light-theme .nav-menu {
         gap: 1rem;
         text-align: center;
         width: 100%;
+        list-style: none;
+        /* Remove bullets */
     }
 
-    /* Fixed: Removed duplicate lines */
-}
-
-.nav-link {
-    display: block;
-    padding: 1rem;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Mobile Nav Link Styling */
+    .nav-link {
+        display: block;
+        padding: 1rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--title-color);
+        /* Ensure text is visible */
+        width: 100%;
+        /* Full width of grid cell */
+    }
 }
 
 /* HERO FIXES */
