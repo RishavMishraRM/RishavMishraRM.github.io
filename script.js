@@ -308,38 +308,24 @@ function startAmbientSound() {
     osc1.start();
     osc2.start();
 
-    /* --- 2. STARTUP PING (Verification) --- */
-    const pingOsc = audioContext.createOscillator();
-    const pingGain = audioContext.createGain();
-
-    pingOsc.type = 'sine';
-    pingOsc.frequency.setValueAtTime(880, audioContext.currentTime); // High A5
-    pingOsc.frequency.exponentialRampToValueAtTime(440, audioContext.currentTime + 0.5); // Drop
-
-    pingGain.gain.setValueAtTime(0.3, audioContext.currentTime);
-    pingGain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.5);
-
-    pingOsc.connect(pingGain);
-    pingGain.connect(audioContext.destination);
-
-    pingOsc.start();
-    pingOsc.stop(audioContext.currentTime + 0.5);
-
     ambientStarted = true;
     console.log(`🌌 Ambient Started. Context State: ${audioContext.state}`);
 }
 
-// Triggers: Attempt on load (rarely works), ensure on interaction
-const initAmbient = () => {
-    startAmbientSound();
-    // Start listener cleanup
-    document.removeEventListener('click', initAmbient);
-    document.removeEventListener('keydown', initAmbient);
-    document.removeEventListener('touchstart', initAmbient);
+// Attempt to play immediately on load
+startAmbientSound();
+
+// Resume AudioContext on ANY interaction (Required by Browsers)
+const resumeAudio = () => {
+    if (audioContext && audioContext.state === 'suspended') {
+        audioContext.resume();
+        console.log("Audio Context Resumed on Interaction");
+    }
 };
 
-// Listeners for first interaction
-document.addEventListener('click', initAmbient, { once: true });
-document.addEventListener('touchstart', initAmbient, { once: true });
-document.addEventListener('keydown', initAmbient, { once: true });
-
+// Listeners to unlock audio silently
+document.addEventListener('click', resumeAudio);
+document.addEventListener('touchstart', resumeAudio);
+document.addEventListener('keydown', resumeAudio);
+document.addEventListener('mousemove', resumeAudio);
+document.addEventListener('scroll', resumeAudio);
