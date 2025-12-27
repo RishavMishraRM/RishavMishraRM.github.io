@@ -269,10 +269,10 @@ document.querySelectorAll(".nav-link").forEach(item => {
 });
 
 /*==================== BACKGROUND MUSIC SYSTEM ====================*/
-// Using reliable test music source
-const bgMusic = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+// Using local file for maximum reliability
+const bgMusic = new Audio('./background.mp3');
 bgMusic.loop = true;
-bgMusic.volume = 0.4;
+bgMusic.volume = 0.6; // Moderate volume
 let isPlaying = false;
 
 // Auto-start attempt
