@@ -6,6 +6,29 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // Register GSAP Plugin
 gsap.registerPlugin(ScrollTrigger);
 
+// --- REUSABLE CODE PANEL COMPONENT ---
+const CodePanel = () => (
+    <div className="home-visual">
+        <div className="visual-wrapper">
+            <div className="code-card">
+                <div className="card-header">
+                    <span className="dot red"></span>
+                    <span className="dot yellow"></span>
+                    <span className="dot green"></span>
+                </div>
+                <div className="code-body">
+                    <div className="code-line"><span className="keyword">const</span> <span className="variable">engineer</span> = {'{'}</div>
+                    <div className="code-line indent">name: <span className="string">'Rishav Kumar Mishra'</span>,</div>
+                    <div className="code-line indent">focus: <span className="string">'Data Science & AI'</span>,</div>
+                    <div className="code-line indent">status: <span className="string">'Building Future'</span></div>
+                    <div className="code-line">{'}'};</div>
+                    <div className="code-line"><span className="function">console</span>.<span className="method">log</span>(engineer);</div>
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
 function App() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [theme, setTheme] = useState('dark'); // 'dark' or 'light'
@@ -275,6 +298,8 @@ function App() {
                                 </div>
                             </div>
                         </div>
+
+                        <CodePanel />
                     </div>
                 </section>
 
@@ -283,7 +308,7 @@ function App() {
                     <h2 className="section-title">About Me</h2>
                     <span className="section-subtitle">My Introduction</span>
 
-                    <div className="container about-container">
+                    <div className="container about-container grid-2-cols">
                         <div className="about-data">
                             <p className="about-description">
                                 With over 4.5 years of experience in the BFSI and Payments industry, I specialize in Digital and
@@ -314,6 +339,8 @@ function App() {
                                 </div>
                             </div>
                         </div>
+
+                        <CodePanel />
                     </div>
                 </section>
 
