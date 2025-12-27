@@ -321,75 +321,99 @@ body.light-theme .header {
 }
 
 .home-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    /* Full viewport height for pinning */
+    display: flex;
     align-items: center;
-    gap: 4rem;
+    justify-content: center;
+    position: relative;
+    padding-top: 0;
+}
+
+.home-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* SPLIT HERO WRAPPER */
+.hero-split-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+    z-index: 10;
+}
+
+.hero-text {
+    font-size: 10vw;
+    /* Massive responsive text */
+    font-family: var(--title-font);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--title-color);
+    white-space: nowrap;
+    margin: 0;
+    transition: color 0.3s;
+}
+
+/* CENTER REVEAL CONTENT */
+.hero-center-reveal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center perfectly */
+    text-align: center;
+    opacity: 0;
+    /* Hidden initially */
+    z-index: 5;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    /* Don't block clicks when hidden */
+}
+
+/* When reveal is active (via class or GSAP), enable pointer events */
+.hero-center-reveal.active {
+    pointer-events: all;
 }
 
 .home-subtitle {
-    display: block;
     font-size: var(--h3-font-size);
     color: var(--first-color);
-    margin-bottom: 0.5rem;
-    font-weight: var(--font-medium);
+    margin-bottom: 1rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
 
-.home-title {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    color: var(--title-color);
-    font-size: var(--h1-font-size);
-    font-family: var(--title-font);
-    line-height: 1;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #fff, #aaa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.home-education {
-    font-size: var(--h3-font-size);
+.home-description {
     color: var(--text-color);
-    margin-bottom: 1.5rem;
-    font-weight: var(--font-medium);
-    margin-bottom: 2.5rem;
-    font-weight: 300;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .home-description-list {
-    max-width: 600px;
-    margin-bottom: 3rem;
-    line-height: 1.6;
+    margin-bottom: 2rem;
     list-style: none;
     padding: 0;
-    text-align: left;
-    /* Align text left for bullet points */
-    align-self: center;
-    /* Ensure block is centered in flex container */
-    border-left: 2px solid var(--first-color);
-    padding-left: 1.5rem;
 }
 
 .home-description-list li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: var(--text-color);
-    font-size: var(--normal-font-size);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     color: var(--text-color-light);
-    font-size: 1.1rem;
 }
 
-.home-description-list li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: var(--first-color);
-    font-weight: bold;
+.home-btns {
+    margin-top: 1rem;
 }
 
 .home-buttons {

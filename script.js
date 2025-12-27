@@ -187,3 +187,48 @@ if (experienceElement) {
     // Format to 1 decimal place and add "+"
     experienceElement.innerText = yearsExp.toFixed(1) + "+ Years";
 }
+
+/*==================== GSAP HERO ANIMATION ====================*/
+// "Parting the Sea" Effect matching art-yakushev.com
+document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const heroTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".home",
+                start: "top top",
+                end: "+=100%", // Pin for 1 screen height
+                pin: true,
+                scrub: 1.5, // Smooth scrubbing
+            }
+        });
+
+        // Split the names apart
+        heroTimeline
+            .to(".hero-left", { x: "-60vw", opacity: 0.2, ease: "power2.inOut" }, "split")
+            .to(".hero-right", { x: "60vw", opacity: 0.2, ease: "power2.inOut" }, "split")
+
+            // Reveal central content
+            .to(".hero-center-reveal", {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 0.8,
+                onStart: () => {
+                    document.querySelector('.hero-center-reveal').classList.add('active');
+                }
+            }, "-=0.3"); // Overlap slightly
+
+        // Additional premium touch: Parallax for the visual wrapper if it exists
+        // gsap.to(".visual-wrapper", {
+        //     scrollTrigger: {
+        //          trigger: ".home",
+        //          start: "top top",
+        //          scrub: true
+        //     },
+        //     y: 200,
+        //     opacity: 0
+        // });
+    }
+});
