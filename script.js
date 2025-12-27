@@ -110,30 +110,32 @@ if (themeButton) {
 }
 
 /*==================== 3D TILT EFFECT ====================*/
-// Applied to all major box elements for consistent premium feel
-const tiltElements = document.querySelectorAll('.project-card, .code-card, .experience-card, .education-card, .about-box');
+document.addEventListener('DOMContentLoaded', () => {
+    // Applied to all major box elements for consistent premium feel
+    const tiltElements = document.querySelectorAll('.project-card, .code-card, .experience-card, .education-card, .about-box');
 
-tiltElements.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+    tiltElements.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-        // Calculate center
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+            // Calculate center
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
 
-        // Get rotation values (max rotation 8deg for subtle, premium feel)
-        const rotateX = ((y - centerY) / centerY) * -8;
-        const rotateY = ((x - centerX) / centerX) * 8;
+            // Get rotation values (max rotation 8deg for subtle, premium feel)
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
 
-        // Apply transform
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-    });
+            // Apply transform
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        });
 
-    card.addEventListener('mouseleave', () => {
-        // Reset transform
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        card.addEventListener('mouseleave', () => {
+            // Reset transform
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
     });
 });
 
