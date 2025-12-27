@@ -1352,19 +1352,70 @@ body.light-theme .nav-menu {
 }
 
 /* GENERAL CARD STACKING */
-/* GENERAL CARD STACKING */
+/* GENERAL CARD STACKING FIXED */
 .projects-container,
 .education-content {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 Columns Side-by-Side */
+    gap: 0.5rem;
+    padding: 0 0.5rem;
 }
 
-/* Side-by-Side on Mobile for smaller cards */
+/* Specific tweaks to make 2-column cards fit on mobile */
+.education-card,
+.project-card {
+    padding: 1rem;
+    /* Reduce padding */
+}
+
+.education-degree,
+.project-title {
+    font-size: 0.9rem;
+    /* Smaller title */
+}
+
+.education-school,
+.project-description {
+    font-size: 0.75rem;
+}
+
+.education-icon,
+.project-icon-overlay {
+    font-size: 1.5rem;
+}
+
+.education-year,
+.education-grade,
+.project-tags span {
+    font-size: 0.65rem;
+}
+
+/* Side-by-Side on Mobile: Force 3 columns in one line */
 .about-info {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 0 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 boxes in one line */
+    gap: 0.5rem;
+    /* Tighter gap to fit 3 in a row */
+    padding: 0 0.5rem;
+}
+
+.about-box {
+    padding: 1rem 0.5rem;
+    /* Smaller padding for mobile fit */
+}
+
+.about-title {
+    font-size: 0.75rem;
+    /* Smaller text */
+}
+
+.about-subtitle {
+    font-size: 0.7rem;
+}
+
+.about-icon {
+    font-size: 1.25rem;
 }
 
 .section {
