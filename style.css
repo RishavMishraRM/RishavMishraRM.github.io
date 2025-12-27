@@ -1204,7 +1204,7 @@ body.light-theme .nav-menu {
 
 /* RESPONSIVE MEDIA QUERIES */
 /* RESPONSIVE MEDIA QUERIES */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .header {
         top: 0;
         bottom: auto;
