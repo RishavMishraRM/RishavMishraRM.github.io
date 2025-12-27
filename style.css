@@ -481,8 +481,8 @@ body.light-theme .header {
     display: flex;
     justify-content: center;
     perspective: 1200px;
-    transform: translateX(-3px);
-    /* Shift 3px Left */
+    transform: translateX(-2.5rem);
+    /* Shift Left to match spacer */
 }
 
 .code-card {
@@ -499,7 +499,8 @@ body.light-theme .header {
     max-width: 480px;
     padding: 2rem;
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-    transform: rotateY(-12deg) rotateX(8deg);
+    transform: rotateY(-18deg) rotateX(10deg);
+    /* Increased angle */
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
