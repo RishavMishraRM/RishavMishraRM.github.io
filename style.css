@@ -156,168 +156,81 @@ img {
     color: var(--first-color);
 }
 
-/* HEADER & NAV */
+/* HEADER */
 .header {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: var(--z-fixed);
-    background-color: transparent;
-    /* Transparent initially */
-    padding: 1.5rem 2rem;
-    transition: .4s;
-}
-
-/* Glass effect on scroll */
-.header.scroll-header {
-    background-color: rgba(5, 5, 5, 0.8);
+    background-color: var(--body-color);
+    /* Adaptive bg */
     backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
+    transition: .4s;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.nav {
-    max-width: 100%;
+/* Light Theme Header tweaks */
+body.light-theme .header {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.nav-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 4.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    height: 3rem;
+    padding: 0 1.5rem;
 }
 
-/* CORNER LOGO ANCHORS */
-.nav-logo-anchor {
-    font-family: var(--title-font);
-    font-size: 1.5rem;
-    font-weight: 700;
+.logo {
     color: var(--title-color);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100;
+    font-weight: var(--font-bold);
+    font-size: 1.25rem;
+    letter-spacing: 1px;
 }
 
-.nav-logo-anchor.left {
-    left: 0;
-}
-
-.nav-logo-anchor.right {
-    right: 0;
-    /* Align to far right */
-    margin-left: 2rem;
-}
-
-.nav-logo-anchor:hover {
+.logo span {
     color: var(--first-color);
-}
-
-/* NAV MENU (Top Right) */
-.nav-menu {
-    position: absolute;
-    right: 3rem;
-    /* Spaced from the right logo */
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .nav-list {
     display: flex;
+    gap: 2rem;
     align-items: center;
 }
 
-/* HOVER ANIMATION: Slide Up & Strikethrough */
 .nav-link {
-    display: block;
-    font-family: 'Inter', sans-serif;
-    /* Tech Sans */
-    font-size: 0.85rem;
-    /* ~14px */
-    text-transform: uppercase;
-    color: #888;
-    /* Muted default */
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    padding: 0.25rem 0;
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+    transition: .3s;
     position: relative;
-    overflow: hidden;
-    /* Mask the slide */
-    transition: color 0.3s;
 }
 
-/* The invisible duplicate that slides in from bottom */
-.nav-link::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 100%;
-    /* Start below */
-    left: 0;
-    width: 100%;
-    color: #FFF;
-    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+.nav-link:hover,
+.active-link {
+    color: var(--first-color);
 }
 
-/* Strikethrough Line */
 .nav-link::after {
     content: '';
     position: absolute;
-    top: 50%;
+    bottom: -0.25rem;
     left: 0;
     width: 0;
-    height: 1px;
+    height: 2px;
     background-color: var(--first-color);
-    /* Red strike */
-    transition: width 0.3s;
-    pointer-events: none;
+    transition: .3s;
 }
 
-/* Hover State */
-.nav-link:hover {
-    color: transparent;
-    /* Hide base text to reveal nothing (trick: base text doesn't slide, we just layer over it? No, need span) */
-}
-
-/* Since we don't have spans in HTML replacement, we use a simpler color shift + Strikethrough 
-   OR we assume the user accepts a simpler "Strikethrough + Color" effect which matches the reference closely enough 
-   without the complex letter-splitting GSAP. 
-   
-   The reference actually does a "Clamshell" (text slides up, new text slides in). 
-   To do this purely CSS without spans, we need the base text to move away. 
-   But we can't move the base text without a wrapper.
-   
-   ADJUSTMENT: We will make the `::before` slide in ON TOP of the text, and make the text transparent? 
-   No, text transparent makes it invisible.
-   
-   Alternative: We leave the text static, but slide the Strikethrough. This is safer.
-*/
-
-.nav-link:hover {
-    color: #FFF;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.active-link {
-    color: #FFF;
-}
-
+.nav-link:hover::after,
 .active-link::after {
     width: 100%;
-}
-
-@media screen and (max-width: 968px) {
-    .nav-list {
-        display: none;
-        /* Hide desktop nav */
-    }
-
-    .nav-menu {
-        position: static;
-    }
-
-    /* Mobile Menu Logic would go here if needed */
 }
 
 /* BUTTONS & LINKS */
