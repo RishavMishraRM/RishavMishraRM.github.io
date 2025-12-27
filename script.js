@@ -275,51 +275,58 @@ let ambientStarted = false;
 function startAmbientSound() {
     if (ambientStarted) return;
 
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    // Create Context
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    audioContext = new AudioContext();
 
-    // Resume context if suspended (Browser Policy)
+    // Explicitly resume (essential for Chrome/Edge)
     if (audioContext.state === 'suspended') {
         audioContext.resume();
     }
 
-    // Master Gain (Volume Control)
+    /* --- 1. AMBIENT DRONE --- */
     const masterGain = audioContext.createGain();
     masterGain.gain.setValueAtTime(0, audioContext.currentTime);
-    masterGain.gain.linearRampToValueAtTime(0.08, audioContext.currentTime + 5); // 5s fade in
+    masterGain.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 2); // Louder (0.5), faster fade (2s)
     masterGain.connect(audioContext.destination);
 
-    // 1. Deep Drone (Base)
+    // Deep Drone (Raised frequency for laptop visibility)
     const osc1 = audioContext.createOscillator();
     osc1.type = 'sine';
-    osc1.frequency.value = 60; // Deep B1
-
-    // 2. Harmonic Pad (texture)
-    const osc2 = audioContext.createOscillator();
-    osc2.type = 'triangle';
-    osc2.frequency.value = 90; // Fifth above
-    const osc2Gain = audioContext.createGain();
-    osc2Gain.gain.value = 0.3;
-
-    // 3. LFO (Breathing Effect)
-    const lfo = audioContext.createOscillator();
-    lfo.type = 'sine';
-    lfo.frequency.value = 0.1; // Very slow cycle (10s)
-    const lfoGain = audioContext.createGain();
-    lfoGain.gain.value = 50; // Modulate frequency/filter
-
-    // Connections
+    osc1.frequency.value = 110; // A2 (Audible on standard speakers)
     osc1.connect(masterGain);
 
+    // Texture (Harmonic)
+    const osc2 = audioContext.createOscillator();
+    osc2.type = 'triangle';
+    osc2.frequency.value = 220; // A3
+    const osc2Gain = audioContext.createGain();
+    osc2Gain.gain.value = 0.1; // Subtle harmonic
     osc2.connect(osc2Gain);
     osc2Gain.connect(masterGain);
 
-    // Start everything
     osc1.start();
     osc2.start();
-    lfo.start();
+
+    /* --- 2. STARTUP PING (Verification) --- */
+    const pingOsc = audioContext.createOscillator();
+    const pingGain = audioContext.createGain();
+
+    pingOsc.type = 'sine';
+    pingOsc.frequency.setValueAtTime(880, audioContext.currentTime); // High A5
+    pingOsc.frequency.exponentialRampToValueAtTime(440, audioContext.currentTime + 0.5); // Drop
+
+    pingGain.gain.setValueAtTime(0.3, audioContext.currentTime);
+    pingGain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.5);
+
+    pingOsc.connect(pingGain);
+    pingGain.connect(audioContext.destination);
+
+    pingOsc.start();
+    pingOsc.stop(audioContext.currentTime + 0.5);
 
     ambientStarted = true;
-    console.log("🌌 Ambient Background Started");
+    console.log(`🌌 Ambient Started. Context State: ${audioContext.state}`);
 }
 
 // Triggers: Attempt on load (rarely works), ensure on interaction
