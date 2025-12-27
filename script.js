@@ -269,86 +269,47 @@ document.querySelectorAll(".nav-link").forEach(item => {
 });
 
 /*==================== BACKGROUND MUSIC SYSTEM ====================*/
-const bgMusic = new Audio('https://cdn.pixabay.com/audio/2022/02/07/audio_12809e4871.mp3'); // Ambient Piano Chill
+// Using reliable test music source
+const bgMusic = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
 bgMusic.loop = true;
 bgMusic.volume = 0.4;
-
-// Add Music Toggle Button to UI
-const musicBtn = document.createElement('button');
-musicBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-musicBtn.className = 'music-control-btn';
-document.body.appendChild(musicBtn);
-
-// Style the button dynamically
-Object.assign(musicBtn.style, {
-    position: 'fixed',
-    bottom: '2rem',
-    left: '2rem',
-    zIndex: '1000',
-    background: 'var(--container-color)',
-    border: '1px solid rgba(255,255,255,0.1)',
-    color: 'var(--title-color)',
-    padding: '0.8rem',
-    borderRadius: '50%',
-    cursor: 'pointer',
-    aspectRatio: '1',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: '1.2rem',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-    transition: 'all 0.3s ease'
-});
-
-// Hover effect
-musicBtn.onmouseover = () => musicBtn.style.transform = 'scale(1.1)';
-musicBtn.onmouseleave = () => musicBtn.style.transform = 'scale(1)';
-
-// Toggle Logic
 let isPlaying = false;
 
-const toggleMusic = () => {
-    if (isPlaying) {
-        bgMusic.pause();
-        musicBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-        musicBtn.style.color = 'var(--title-color)';
-    } else {
-        bgMusic.play().then(() => {
-            musicBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-            musicBtn.style.color = 'var(--first-color)';
-        }).catch(err => console.log("Audio play failed:", err));
-    }
-    isPlaying = !isPlaying;
-};
-
-musicBtn.addEventListener('click', toggleMusic);
-
-// Auto-start attempt (Low volume start)
+// Auto-start attempt
 const attemptAutoPlay = () => {
     bgMusic.play().then(() => {
         isPlaying = true;
-        musicBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-        musicBtn.style.color = 'var(--first-color)';
-        console.log("🎶 Background Music Auto-Started");
-    }).catch(() => {
-        console.log("Audio Autoplay Blocked - Waiting for interaction");
+        console.log("🎶 Background Music Started");
+    }).catch(err => {
+        console.log("Autoplay waiting for interaction...");
     });
 };
 
-// Try immediately
+// Try immediately on load
 attemptAutoPlay();
 
-// Fallback: Unlock on first interaction
+// Fallback: Unlock on first interaction (Click, Scroll, Key)
 const unlockAudio = () => {
     if (!isPlaying) {
-        attemptAutoPlay();
-        // Remove listeners after first successful interaction attempt
-        document.removeEventListener('click', unlockAudio);
-        document.removeEventListener('scroll', unlockAudio);
-        document.removeEventListener('keydown', unlockAudio);
+        bgMusic.play().then(() => {
+            isPlaying = true;
+            console.log("🎶 Audio Unlocked via Interaction");
+            // Remove listeners once successful
+            document.removeEventListener('click', unlockAudio);
+            document.removeEventListener('scroll', unlockAudio);
+            document.removeEventListener('keydown', unlockAudio);
+            document.removeEventListener('mousemove', unlockAudio);
+            document.removeEventListener('touchstart', unlockAudio);
+        }).catch(err => {
+            // Still blocked, keep listeners attached
+            console.log("Interaction retry failed");
+        });
     }
 };
 
+// Aggressive listeners for first user gesture
 document.addEventListener('click', unlockAudio);
 document.addEventListener('scroll', unlockAudio);
 document.addEventListener('keydown', unlockAudio);
+document.addEventListener('mousemove', unlockAudio);
+document.addEventListener('touchstart', unlockAudio);
