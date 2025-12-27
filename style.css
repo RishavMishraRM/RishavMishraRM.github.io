@@ -601,7 +601,7 @@ body.light-theme .header {
 }
 
 .indent {
-    padding-left: 2rem;
+    padding-left: 3rem;
 }
 
 /* Light Theme Syntax Highlighting */
@@ -975,26 +975,34 @@ body.light-theme .header {
 }
 
 /* CARD RESKIN (Experience/Education) */
+/* 3D ENABLED CARDS */
 .experience-card,
 .education-card,
 .project-card,
-.about-box,
-.code-card {
+.about-box {
     background: var(--container-color);
     padding: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0 !important;
-    /* Force Sharp Brutalist */
-    transition: .4s;
+    transform-style: preserve-3d;
+    /* Key for 3D effect */
+    perspective: 1000px;
+    transition: transform 0.1s ease-out;
+    /* Smooth hover */
+    will-change: transform;
 }
 
+/* Hover Lift Effect */
 .experience-card:hover,
 .education-card:hover,
 .project-card:hover,
 .about-box:hover {
     border-color: var(--first-color);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 59, 48, 0.15);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        /* Deep shadow */
+        0 0 0 1px var(--first-color);
+    /* Highlight border */
+    z-index: 10;
 }
 
 .contact-card {
