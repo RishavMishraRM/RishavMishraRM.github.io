@@ -88,6 +88,52 @@ body {
     background-color: var(--body-color);
     color: var(--text-color);
     line-height: 1.6;
+    position: relative;
+    /* Allow pseudo-elements */
+}
+
+/* PREMIUM AMBIENT GLOW */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background:
+        radial-gradient(circle at 15% 50%, rgba(89, 48, 255, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(215, 0, 21, 0.12), transparent 40%);
+    pointer-events: none;
+    filter: blur(80px);
+    /* Smooth out the blobs */
+    animation: ambientPulse 10s ease-in-out infinite alternate;
+}
+
+@keyframes ambientPulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+/* NOISE TEXTURE (Optional, adds grit) */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 /* Serif Headings */
@@ -486,40 +532,44 @@ body.light-theme .header {
 }
 
 .code-card {
-    background: rgba(22, 22, 22, 0.4);
-    /* Darker, more subtle */
+    background: #ffffff;
+    /* Clean Mac White */
     backdrop-filter: blur(24px);
-    /* Heavier blur */
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    /* Top highlight */
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    /* distinct border */
     border-radius: 2rem;
     width: 100%;
     max-width: 700px;
-    /* Expanded Width */
     padding: 4rem;
-    /* Extra Spacious */
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+    /* Mac-like Deep Shadow */
+    box-shadow:
+        0 50px 100px -20px rgba(50, 50, 93, 0.25),
+        0 30px 60px -30px rgba(0, 0, 0, 0.3),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.025);
+
     transform: rotateY(-18deg) rotateX(10deg);
-    /* Increased angle */
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .code-card:hover {
     transform: rotateY(0) rotateX(0);
+    box-shadow:
+        0 60px 120px -20px rgba(50, 50, 93, 0.35),
+        0 40px 70px -30px rgba(0, 0, 0, 0.4);
 }
 
 .card-header {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 3.5rem;
-    /* Increased spacing under dots */
+    gap: 0.8rem;
+    /* Slightly wider gap */
+    margin-bottom: 4rem;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    /* Larger macOS dots */
+    height: 15px;
     border-radius: 50%;
 }
 
@@ -537,9 +587,11 @@ body.light-theme .header {
 
 .card-body {
     font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #a9a9a9;
+    font-size: 1.1rem;
+    /* slightly larger text */
+    line-height: 1.8;
+    color: #555555;
+    /* Dark grey for light mode */
 }
 
 .code-line {
@@ -547,27 +599,34 @@ body.light-theme .header {
 }
 
 .indent {
-    padding-left: 1.5rem;
+    padding-left: 2rem;
 }
 
+/* Light Theme Syntax Highlighting */
 .keyword {
-    color: #cc99cd;
+    color: #d55fde;
+    /* Pink/Purple */
+    font-weight: 600;
 }
 
 .variable {
-    color: #61aeee;
+    color: #3b82f6;
+    /* Blue */
 }
 
 .string {
-    color: #98c379;
+    color: #10b981;
+    /* Green */
 }
 
 .function {
-    color: #e5c07b;
+    color: #f59e0b;
+    /* Amber/Orange */
 }
 
 .method {
-    color: #61aeee;
+    color: #3b82f6;
+    /* Blue */
 }
 
 /* ABOUT */
