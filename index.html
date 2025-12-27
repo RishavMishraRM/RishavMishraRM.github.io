@@ -1,244 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of Rishav Kumar Mishra - Data Science & AI Developer. Explore my projects, skills, and journey.">
+    <title>Rishav Kumar Mishra | Developer</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com https://cdn.jsdelivr.net/; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
-
-
-<meta name="author" content="Rishav Mishra">
-<meta name="description" content="Rishav Mishra&#39;s personal website">
-<meta name="keywords" content="blog,developer,personal">
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Rishav Mishra"/>
-<meta name="twitter:description" content="Rishav Mishra&#39;s personal website"/>
-
-<meta property="og:title" content="Rishav Mishra" />
-<meta property="og:description" content="Rishav Mishra&#39;s personal website" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://RishavMishraRM.github.io/" />
-
-
-
-
-  <title>Rishav Mishra</title>
-
-  
-  <link rel="canonical" href="https://RishavMishraRM.github.io/">
-  
-
-  <link rel="preload" href="https://RishavMishraRM.github.io/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
-
-
-  
-  
-  <link rel="stylesheet" href="https://RishavMishraRM.github.io/css/coder.min.6b1a4fbc48955b72aea7913e43fabeb45e8bc120da5aa41b598dd33adcac4b59.css" integrity="sha256-axpPvEiVW3Kup5E&#43;Q/q&#43;tF6LwSDaWqQbWY3TOtysS1k=" crossorigin="anonymous" media="screen" />
-
-
-
-
-
-  
-  
-    
-    
-    <link rel="stylesheet" href="https://RishavMishraRM.github.io/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css" integrity="sha256-OeQafxa9&#43;MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin="anonymous" media="screen" />
-  
-
-
-
-   
-
-
-
-
-  <link rel="icon" type="image/png" href="https://RishavMishraRM.github.io/images/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="https://RishavMishraRM.github.io/images/favicon-16x16.png" sizes="16x16">
-
-<link rel="apple-touch-icon" href="https://RishavMishraRM.github.io/images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://RishavMishraRM.github.io/images/apple-touch-icon.png">
-
-<link rel="manifest" href="https://RishavMishraRM.github.io/site.webmanifest">
-<link rel="mask-icon" href="https://RishavMishraRM.github.io/images/safari-pinned-tab.svg" color="#5bbad5">
-
-
-  <link rel="alternate" type="application/rss+xml" href="https://RishavMishraRM.github.io/index.xml" title="Rishav Mishra" />
-
-
-  <meta name="generator" content="Hugo 0.101.0" />
-
-
-  
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
+<body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
 
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">Rishav<span>Mishra</span></a>
 
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                    <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link button-styled">Contact Me</a></li>
+                </ul>
+                <div class="nav-close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
 
+            <div class="nav-btns">
+                <!-- Theme Change Button -->
+                <i class="fas fa-moon change-theme" id="theme-button"></i>
 
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <main class="main">
+        <!-- HOME SECTION -->
+        <section class="home" id="home">
+            <div class="background-globes">
+                <div class="globe globe-1"></div>
+                <div class="globe globe-2"></div>
+            </div>
 
-<body class="preload-transitions colorscheme-auto">
-  
-<div class="float-container">
-    <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-    </a>
-</div>
+            <div class="container home-container">
+                <div class="home-content">
+                    <span class="home-subtitle">Hello, I'm</span>
+                    <h1 class="home-title">Rishav Kumar Mishra</h1>
+                    <h3 class="home-education">GenAI Engineer | Applied AI & Payments</h3>
+                    <ul class="home-description-list">
+                        <li>4.5+ years in BFSI/Payment Industry (Digital & API Banking) with deep Fintech domain
+                            knowledge.</li>
+                        <li>Expertise in end-to-end digital payment journeys, fraud prevention, and GTM strategies.</li>
+                        <li>Leading GenAI Conversational Agent development for Lending & Collections.</li>
+                    </ul>
+                    <div class="home-buttons">
+                        <a href="#projects" class="button">
+                            View Work <i class="fas fa-arrow-right button-icon"></i>
+                        </a>
+                        <a href="https://github.com/RishavMishraRM" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
 
+                <div class="home-visual">
+                    <!-- A stylized CSS representation or placeholder for user image -->
+                    <div class="visual-wrapper">
+                        <div class="code-card">
+                            <div class="card-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="card-body">
+                                <div class="code-line"><span class="keyword">const</span> <span
+                                        class="variable">engineer</span> = {</div>
+                                <div class="code-line indent">name: <span class="string">'Rishav Kumar Mishra'</span>,
+                                </div>
+                                <div class="code-line indent">focus: <span class="string">'Data Science & AI'</span>,
+                                </div>
+                                <div class="code-line indent">status: <span class="string">'Building Future'</span>
+                                </div>
+                                <div class="code-line">};</div>
+                                <div class="code-line"><span class="function">console</span>.<span
+                                        class="method">log</span>(engineer);</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <main class="wrapper">
-    <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://RishavMishraRM.github.io/">
-      Rishav Mishra
-    </a>
-    
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://RishavMishraRM.github.io/about/">About</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://RishavMishraRM.github.io/posts/">Experience</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://RishavMishraRM.github.io/projects/">Projects</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://RishavMishraRM.github.io/contact/">Contact me</a>
-            </li>
-          
-        
-        
-      </ul>
-    
-  </section>
-</nav>
+        <!-- ABOUT SECTION -->
+        <section class="about section" id="about">
+            <h2 class="section-title">About Me</h2>
+            <span class="section-subtitle">My Introduction</span>
 
+            <div class="container about-container">
+                <div class="about-data">
+                    <p class="about-description">
+                        I am a passionate developer and data enthusiast with a knack for creating elegant solutions to
+                        complex problems.
+                        Graduating in 2022 with a high standing (9 CGPA), my journey is driven by curiosity in AI and
+                        Machine Learning.
+                        I specialize in modern web technologies and data-driven applications.
+                    </p>
 
-    <div class="content">
-      
-  <section class="container centered">
-  <div class="about">
-    
-  
-    <div class="avatar"><img src="https://RishavMishraRM.github.io/images/one.jpg" alt="avatar"></div>
-  
+                    <div class="about-info">
+                        <div class="about-box">
+                            <i class="fas fa-award about-icon"></i>
+                            <h3 class="about-title">Experience</h3>
+                            <span class="about-subtitle" id="experience-years">5+ Years</span>
+                        </div>
+                        <div class="about-box">
+                            <i class="fas fa-graduation-cap about-icon"></i>
+                            <h3 class="about-title">Education</h3>
+                            <span class="about-subtitle">M.Tech '26, IIT</span>
+                        </div>
+                        <div class="about-box">
+                            <i class="fas fa-brain about-icon"></i>
+                            <h3 class="about-title">Focus</h3>
+                            <span class="about-subtitle">Generative AI, AI, ML,<br> Data Science, DL, CV, NLP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- EXPERIENCE SECTION -->
+        <section class="experience section" id="experience">
+            <h2 class="section-title">Experience</h2>
+            <span class="section-subtitle">My professional journey</span>
 
+            <div class="container">
+                <div class="education-content">
+                    <!-- Exp Card 1 -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">Analyst - Full time</h3>
+                            <span class="education-school">HDFC Bank</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i> Jul 2022 - Present</span>
+                            <span class="education-grade">Skills: Data Analytics, ML</span>
+                        </div>
+                    </div>
 
+                    <!-- Exp Card 2 -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">Data Analyst Intern</h3>
+                            <span class="education-school">HighRadius</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i> Aug 2021 - Aug 2022</span>
+                        </div>
+                    </div>
 
-    <h1>Rishav Mishra</h1>
+                    <!-- Exp Card 3 -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">Intern</h3>
+                            <span class="education-school">Wipro</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i> Mar 2022 - Jun 2022</span>
+                        </div>
+                    </div>
 
-<h2>Computer Science Engineer<br>AI Reseacher, Analyst<br></h2>
+                    <!-- Exp Card 4 -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">Research Intern</h3>
+                            <span class="education-school">NIT Patna</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i> Mar 2021 - Jun 2021</span>
+                        </div>
+                    </div>
 
+                    <!-- Exp Card 5 -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">Data Science Intern</h3>
+                            <span class="education-school">MedTourEasy</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i> Feb 2021 - Mar 2021</span>
+                        </div>
+                    </div>
 
+                    <!-- Exp Card 6 -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">Data Scientist Intern</h3>
+                            <span class="education-school">The Sparks Foundation</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i> Jan 2021 - Feb 2021</span>
+                        </div>
+                    </div>
 
-    
-<ul>
-  
-    
-      <li>
-        <a href="https://github.com/RishavMishraRM/" aria-label="Github"   >
-          <i class="fa fa-2x fa-github" aria-hidden="true"></i>
-        </a>
-      </li>
-    
-  
-    
-      <li>
-        <a href="https://gitlab.com/RishavMishraRM/" aria-label="Gitlab"   >
-          <i class="fa fa-2x fa-gitlab" aria-hidden="true"></i>
-        </a>
-      </li>
-    
-  
-    
-      <li>
-        <a href="https://twitter.com/RishavMishraRM/" aria-label="Twitter"   >
-          <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
-        </a>
-      </li>
-    
-  
-    
-      <li>
-        <a href="https://www.linkedin.com/in/rishavkumarmishra/" aria-label="LinkedIn"   >
-          <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
-        </a>
-      </li>
-    
-  
-    
-      <li>
-        <a href="https://www.instagram.com/the_rishav_mishra/" aria-label="Instagram"   >
-          <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
-        </a>
-      </li>
-    
-  
-</ul>
+                    <!-- Exp Card 7 -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">Tech Intern</h3>
+                            <span class="education-school">BVG India LTD.</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i> Aug 2020 - Oct 2020</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  </div>
-</section>
+        <!-- EDUCATION SECTION -->
+        <section class="education section" id="education">
+            <h2 class="section-title">Education</h2>
+            <span class="section-subtitle">My academic journey</span>
 
+            <div class="container">
+                <div class="education-content">
+                    <!-- Edu Card 1 -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">M.Tech in Artificial Intelligence & Data Science</h3>
+                            <span class="education-school">Indian Institute of Technology, Patna</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i> 2024 - 2026</span>
+                            <span class="education-grade">Grade: In Progress</span>
+                        </div>
+                    </div>
 
-    </div>
+                    <!-- Edu Card 2 -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">B.Tech in Computer Science Engineering</h3>
+                            <span class="education-school">SRM Institute of Science and Technology, Chennai</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i> 2018 - 2022</span>
+                            <span class="education-grade">Grade: 9 CGPA</span>
+                        </div>
+                    </div>
+                    <!-- Edu Card 3 (Placeholder/High School if needed) -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">Higher Secondary</h3>
+                            <span class="education-school">Park Mount Public School, Patna <br> CBSE <br> Science</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i> 2017 - 2018</span>
+                            <span class="education-grade"></span>
+                        </div>
+                    </div>
+
+                    <!-- Edu Card 4 (Placeholder/High School if needed) -->
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="education-data">
+                            <h3 class="education-degree">Boards</h3>
+                            <span class="education-school">St. Xaviers High School, Patna <br> ICSE <br> Computer &
+                                Science</span>
+                            <span class="education-year"><i class="far fa-calendar-alt"></i>2015 - 2016</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">My Skills</h2>
+            <span class="section-subtitle">What I work with</span>
+
+            <!-- Tech Skills -->
+            <h3 class="skills-category-title">Tech Skills</h3>
+            <div class="skills-section-container">
+                <div class="skills-track">
+                    <!-- Tech Group 1 -->
+                    <div class="skill-tag"><i class="fas fa-magic"></i> Generative AI</div>
+                    <div class="skill-tag"><i class="fas fa-robot"></i> AI / ML</div>
+                    <div class="skill-tag"><i class="fas fa-atom"></i> Data Science</div>
+                    <div class="skill-tag"><i class="fas fa-brain"></i> Machine Learning</div>
+                    <div class="skill-tag"><i class="fas fa-headset"></i> GenAI Calling Bots</div>
+                    <div class="skill-tag"><i class="fas fa-shield-virus"></i> Guardrails & LLMs</div>
+                    <div class="skill-tag"><i class="fas fa-chart-pie"></i> Analytics</div>
+                    <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill-tag"><i class="fas fa-database"></i> SQL</div>
+                    <div class="skill-tag"><i class="far fa-snowflake"></i> Snowflake</div>
+                    <div class="skill-tag"><i class="fas fa-filter"></i> ETL Processes</div>
+                    <div class="skill-tag"><i class="fas fa-project-diagram"></i> DAGHub</div>
+                    <div class="skill-tag"><i class="fab fa-git-alt"></i> Git</div>
+                    <div class="skill-tag"><i class="fab fa-github"></i> GitHub</div>
+                    <div class="skill-tag"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-tag"><i class="fas fa-server"></i> SOAP / REST APIs</div>
+                    <div class="skill-tag"><i class="fas fa-envelope-open-text"></i> Postman</div>
+                    <div class="skill-tag"><i class="fab fa-jira"></i> JIRA</div>
+                    <div class="skill-tag"><i class="fab fa-confluence"></i> Confluence</div>
+                    <div class="skill-tag"><i class="fas fa-mobile-alt"></i> Digital Payments</div>
+                    <div class="skill-tag"><i class="far fa-credit-card"></i> Credit Card APIs</div>
+                    <div class="skill-tag"><i class="fas fa-university"></i> API Banking Integrations</div>
+                    <div class="skill-tag"><i class="fas fa-desktop"></i> Vision PLUS APIs</div>
+                    <div class="skill-tag"><i class="fas fa-exchange-alt"></i> Card Processing</div>
+
+                    <!-- Tech Group 2 (Duplicate) for Infine scroll -->
+                    <div class="skill-tag"><i class="fas fa-magic"></i> Generative AI</div>
+                    <div class="skill-tag"><i class="fas fa-robot"></i> AI / ML</div>
+                    <div class="skill-tag"><i class="fas fa-atom"></i> Data Science</div>
+                    <div class="skill-tag"><i class="fas fa-brain"></i> Machine Learning</div>
+                    <div class="skill-tag"><i class="fas fa-headset"></i> GenAI Calling Bots</div>
+                    <div class="skill-tag"><i class="fas fa-shield-virus"></i> Guardrails & LLMs</div>
+                    <div class="skill-tag"><i class="fas fa-chart-pie"></i> Analytics</div>
+                    <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill-tag"><i class="fas fa-database"></i> SQL</div>
+                    <div class="skill-tag"><i class="far fa-snowflake"></i> Snowflake</div>
+                    <div class="skill-tag"><i class="fas fa-filter"></i> ETL Processes</div>
+                    <div class="skill-tag"><i class="fas fa-project-diagram"></i> DAGHub</div>
+                    <div class="skill-tag"><i class="fab fa-git-alt"></i> Git</div>
+                    <div class="skill-tag"><i class="fab fa-github"></i> GitHub</div>
+                    <div class="skill-tag"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="skill-tag"><i class="fas fa-server"></i> SOAP / REST APIs</div>
+                    <div class="skill-tag"><i class="fas fa-envelope-open-text"></i> Postman</div>
+                    <div class="skill-tag"><i class="fab fa-jira"></i> JIRA</div>
+                    <div class="skill-tag"><i class="fab fa-confluence"></i> Confluence</div>
+                    <div class="skill-tag"><i class="fas fa-mobile-alt"></i> Digital Payments</div>
+                    <div class="skill-tag"><i class="far fa-credit-card"></i> Credit Card APIs</div>
+                    <div class="skill-tag"><i class="fas fa-university"></i> API Banking Integrations</div>
+                    <div class="skill-tag"><i class="fas fa-desktop"></i> Vision PLUS APIs</div>
+                    <div class="skill-tag"><i class="fas fa-exchange-alt"></i> Card Processing</div>
+                </div>
+            </div>
+
+            <!-- Functional Skills -->
+            <h3 class="skills-category-title">Functional Skills</h3>
+            <div class="skills-section-container">
+                <div class="skills-track skills-track-reverse">
+                    <!-- Functional Group 1 -->
+                    <div class="skill-tag"><i class="fas fa-tasks"></i> Program Management</div>
+                    <div class="skill-tag"><i class="fas fa-project-diagram"></i> Project Management</div>
+                    <div class="skill-tag"><i class="fas fa-users"></i> Stakeholder Management</div>
+                    <div class="skill-tag"><i class="fas fa-user-friends"></i> Team Management</div>
+                    <div class="skill-tag"><i class="fas fa-store-alt"></i> Vendor Management</div>
+                    <div class="skill-tag"><i class="fas fa-cogs"></i> System Integration</div>
+                    <div class="skill-tag"><i class="fas fa-pencil-ruler"></i> Solution Design</div>
+                    <div class="skill-tag"><i class="fas fa-building"></i> Business Architecture</div>
+                    <div class="skill-tag"><i class="fas fa-stream"></i> Workflow Analysis</div>
+                    <div class="skill-tag"><i class="fas fa-file-contract"></i> BRD Creation</div>
+                    <div class="skill-tag"><i class="fas fa-file-code"></i> FSD Creation</div>
+                    <div class="skill-tag"><i class="fas fa-file-alt"></i> TSD Creation</div>
+                    <div class="skill-tag"><i class="fas fa-sticky-note"></i> Concept Notes</div>
+                    <div class="skill-tag"><i class="fas fa-vial"></i> Test Case Dev</div>
+                    <div class="skill-tag"><i class="fas fa-scroll"></i> Scenario Dev</div>
+                    <div class="skill-tag"><i class="fas fa-lock"></i> PCI DSS Compliance</div>
+                    <div class="skill-tag"><i class="fas fa-exclamation-triangle"></i> Risk Management</div>
+                    <div class="skill-tag"><i class="fas fa-shield-alt"></i> ISG</div>
+                    <div class="skill-tag"><i class="fas fa-balance-scale"></i> Data Governance</div>
+                    <div class="skill-tag"><i class="fas fa-chart-line"></i> Financial Services Domain</div>
+                    <div class="skill-tag"><i class="fas fa-file-invoice-dollar"></i> Finance, Risk & Compliance</div>
+                    <div class="skill-tag"><i class="fas fa-landmark"></i> Core Banking Systems</div>
+                    <div class="skill-tag"><i class="fas fa-globe"></i> Digital Payment Ecosystem</div>
+
+                    <!-- Functional Group 2 (Duplicate) for Infine scroll -->
+                    <div class="skill-tag"><i class="fas fa-tasks"></i> Program Management</div>
+                    <div class="skill-tag"><i class="fas fa-project-diagram"></i> Project Management</div>
+                    <div class="skill-tag"><i class="fas fa-users"></i> Stakeholder Management</div>
+                    <div class="skill-tag"><i class="fas fa-user-friends"></i> Team Management</div>
+                    <div class="skill-tag"><i class="fas fa-store-alt"></i> Vendor Management</div>
+                    <div class="skill-tag"><i class="fas fa-cogs"></i> System Integration</div>
+                    <div class="skill-tag"><i class="fas fa-pencil-ruler"></i> Solution Design</div>
+                    <div class="skill-tag"><i class="fas fa-building"></i> Business Architecture</div>
+                    <div class="skill-tag"><i class="fas fa-stream"></i> Workflow Analysis</div>
+                    <div class="skill-tag"><i class="fas fa-file-contract"></i> BRD Creation</div>
+                    <div class="skill-tag"><i class="fas fa-file-code"></i> FSD Creation</div>
+                    <div class="skill-tag"><i class="fas fa-file-alt"></i> TSD Creation</div>
+                    <div class="skill-tag"><i class="fas fa-sticky-note"></i> Concept Notes</div>
+                    <div class="skill-tag"><i class="fas fa-vial"></i> Test Case Dev</div>
+                    <div class="skill-tag"><i class="fas fa-scroll"></i> Scenario Dev</div>
+                    <div class="skill-tag"><i class="fas fa-lock"></i> PCI DSS Compliance</div>
+                    <div class="skill-tag"><i class="fas fa-exclamation-triangle"></i> Risk Management</div>
+                    <div class="skill-tag"><i class="fas fa-shield-alt"></i> ISG</div>
+                    <div class="skill-tag"><i class="fas fa-balance-scale"></i> Data Governance</div>
+                    <div class="skill-tag"><i class="fas fa-chart-line"></i> Financial Services Domain</div>
+                    <div class="skill-tag"><i class="fas fa-file-invoice-dollar"></i> Finance, Risk & Compliance</div>
+                    <div class="skill-tag"><i class="fas fa-landmark"></i> Core Banking Systems</div>
+                    <div class="skill-tag"><i class="fas fa-globe"></i> Digital Payment Ecosystem</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section class="projects section" id="projects">
+            <h2 class="section-title">Projects</h2>
+            <span class="section-subtitle">Most recent work</span>
+
+            <!-- Official Projects -->
+            <h3 class="skills-category-title">Official Projects</h3>
+            <div class="container projects-container">
+                <!-- Official Project 1: GenAI Bot -->
+                <div class="project-card">
+                    <div class="project-img-holder">
+                        <div class="project-gradient p-grad-1"></div>
+                        <i class="fas fa-robot project-icon-overlay"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">GenAI Conversational Bot</h3>
+                        <p class="project-description">Developed a multi-modal Generative AI calling bot for Lending &
+                            Collections, optimizing customer interactions with advanced prompting.</p>
+                        <div class="project-tags">
+                            <span>GenAI</span><span>LLMs</span><span>Guardrails</span><span>IP Calling</span>
+                        </div>
+                        <span class="project-link-span">HDFC Bank</span>
+                    </div>
+                </div>
+
+                <!-- Official Project 2: Fraud Prevention ML -->
+                <div class="project-card">
+                    <div class="project-img-holder">
+                        <div class="project-gradient p-grad-2"></div>
+                        <i class="fas fa-shield-alt project-icon-overlay"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Fraud Prevention ML</h3>
+                        <p class="project-description">Led risk prevention ML initiatives, enhancing the Proactive Risk
+                            Manager (PRM) system and conducting POCs for fraud detection.</p>
+                        <div class="project-tags">
+                            <span>Machine Learning</span><span>SQL</span><span>Risk</span>
+                        </div>
+                        <span class="project-link-span">HDFC Bank</span>
+                    </div>
+                </div>
+
+                <!-- Official Project 3: API Banking -->
+                <div class="project-card">
+                    <div class="project-img-holder">
+                        <div class="project-gradient p-grad-3"></div>
+                        <i class="fas fa-university project-icon-overlay"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">GTM Dashboards</h3>
+                        <p class="project-description">Created GTM Dashboards for Marketing Team and Sales Team,
+                            ensuring Marketing and Sales strategy alignment.</p>
+                        <div class="project-tags">
+                            <span>Tableau</span><span>Salesforce</span><span>Snowflake</span><span>ETL</span>
+                        </div>
+                        <span class="project-link-span">Highradius</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Projects -->
+            <h3 class="skills-category-title">Personal Projects</h3>
+            <div class="container projects-container">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img-holder">
+                        <div class="project-gradient p-grad-1"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">A personal portfolio hosted on GitHub Pages to showcase my work
+                            and skills.</p>
+                        <div class="project-tags">
+                            <span>HTML</span><span>CSS</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Placeholder) -->
+                <div class="project-card">
+                    <div class="project-img-holder">
+                        <div class="project-gradient p-grad-2"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce App</h3>
+                        <p class="project-description">A full-stack shopping platform with cart and checkout features.
+                        </p>
+                        <div class="project-tags">
+                            <span>React</span><span>Node</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Placeholder) -->
+                <div class="project-card">
+                    <div class="project-img-holder">
+                        <div class="project-gradient p-grad-3"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Manager</h3>
+                        <p class="project-description">Productivity tool to manage daily tasks effectively.</p>
+                        <div class="project-tags">
+                            <span>Vue</span><span>Firebase</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact section" id="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <span class="section-subtitle">Get in touch</span>
+
+            <div class="container contact-container">
+                <div class="contact-content">
+                    <h3 class="contact-header">Let's talk about everything!</h3>
+                    <p class="contact-text">Don't like forms? Send me an email. 👋</p>
+
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <i class="fas fa-envelope contact-card-icon"></i>
+                            <h3 class="contact-card-title">Email</h3>
+                            <span class="contact-card-data">rishav.mishra.rkm@gmail.com</span>
+                            <a href="mailto:rishav.mishra.rkm@gmail.com" class="contact-button">Write me <i
+                                    class="fas fa-arrow-right contact-button-icon"></i></a>
+                        </div>
+
+                        <div class="contact-card">
+                            <i class="fab fa-linkedin contact-card-icon"></i>
+                            <h3 class="contact-card-title">LinkedIn</h3>
+                            <span class="contact-card-data">Rishav Kumar Mishra</span>
+                            <a href="#" class="contact-button">Connect <i
+                                    class="fas fa-arrow-right contact-button-icon"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
-  <section class="container">
-    ©
-    
-      2019 -
-    
-    2022
-     Rishav Mishra 
-    ·
-    
-Powered by <a href="https://github.com/RishavMishraRM">RishavMishraRM</a>
-    
-  </section>
-</footer>
+        <div class="container footer-container">
+            <h1 class="footer-title">Rishav Mishra</h1>
+            <ul class="footer-list">
+                <li><a href="#about" class="footer-link">About</a></li>
+                <li><a href="#projects" class="footer-link">Projects</a></li>
+                <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="https://github.com/RishavMishraRM" class="footer-social-link" target="_blank"><i
+                        class="fab fa-github"></i></a>
+                <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+            <span class="footer-copy">&#169; RishavMishraRM. All rights reserved.</span>
+        </div>
+    </footer>
 
-  </main>
-
-  
-  
-  <script src="https://RishavMishraRM.github.io/js/coder.min.236049395dc3682fb2719640872958e12f1f24067bb09c327b233e6290c7edac.js" integrity="sha256-I2BJOV3DaC&#43;ycZZAhylY4S8fJAZ7sJwyeyM&#43;YpDH7aw="></script>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+    <script src="script.js"></script>
 </body>
 
 </html>
