@@ -481,44 +481,42 @@ body.light-theme .header {
     display: flex;
     justify-content: center;
     perspective: 1200px;
-    transform: translateX(-2.5rem);
-    /* Shift Left to match spacer */
+    transform: none;
 }
 
 .code-card {
-    background: rgba(22, 22, 22, 0.4);
-    /* Darker, more subtle */
+    background: rgba(255, 255, 255, 0.9);
+    /* White Card */
     backdrop-filter: blur(24px);
-    /* Heavier blur */
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    /* Top highlight */
-    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 2.5rem;
+    /* Matches Img 2 */
     width: 100%;
-    max-width: 700px;
-    /* Expanded Width */
-    padding: 4rem;
-    /* Extra Spacious */
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-    transform: rotateY(-18deg) rotateX(10deg);
-    /* Increased angle */
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    max-width: 600px;
+    /* Balanced width */
+    padding: 3.5rem;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    /* Soft light shadow */
+    transition: all 0.4s ease;
+    transform: none;
+    /* Flat, no 3D */
 }
 
 .code-card:hover {
-    transform: rotateY(0) rotateX(0);
+    transform: translateY(-5px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
 }
 
 .card-header {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
 }
 
@@ -536,9 +534,11 @@ body.light-theme .header {
 
 .card-body {
     font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #a9a9a9;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+    /* Dark text for white card */
+    font-weight: 500;
 }
 
 .code-line {
@@ -546,27 +546,33 @@ body.light-theme .header {
 }
 
 .indent {
-    padding-left: 1.5rem;
+    padding-left: 2rem;
 }
 
+/* Syntax Highlighting for Light BG */
 .keyword {
-    color: #cc99cd;
+    color: #d5408c;
+    font-weight: bold;
 }
 
+/* Pink/Purple */
 .variable {
-    color: #61aeee;
+    color: #0070f3;
 }
 
+/* Blue */
 .string {
-    color: #98c379;
+    color: #10b981;
 }
 
+/* Green */
 .function {
-    color: #e5c07b;
+    color: #f5a623;
 }
 
+/* Orange */
 .method {
-    color: #61aeee;
+    color: #0070f3;
 }
 
 /* ABOUT */
