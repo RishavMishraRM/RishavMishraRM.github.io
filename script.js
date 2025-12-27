@@ -109,29 +109,6 @@ if (themeButton) {
     })
 }
 
-/*==================== SCROLL REVEAL ANIMATION (Simulated) ====================*/
-// Simple fade-in on scroll using Intersection Observer
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.section').forEach((section) => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(section);
-});
-
 /*==================== 3D TILT EFFECT ====================*/
 // We apply this to .project-card and .code-card for that premium feel
 const tiltElements = document.querySelectorAll('.project-card, .code-card');
@@ -159,6 +136,41 @@ tiltElements.forEach(card => {
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
     });
 });
+
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    // reset: true // Animations repeat
+})
+
+/* Home */
+sr.reveal('.home-data')
+sr.reveal('.home-img', { delay: 500 })
+sr.reveal('.home-social', { delay: 600 })
+
+/* General Section Titles */
+sr.reveal('.section-title, .section-subtitle', { origin: 'left', interval: 100 })
+
+/* About */
+sr.reveal('.about-img', { origin: 'left' })
+sr.reveal('.about-data', { origin: 'right' })
+sr.reveal('.about-box', { interval: 200 })
+
+/* Experience & Education */
+sr.reveal('.experience-card, .education-card', { interval: 200, origin: 'bottom' })
+
+/* Skills */
+sr.reveal('.skills-category-title', { origin: 'left' })
+sr.reveal('.skills-section-container', { origin: 'bottom', delay: 200 })
+
+/* Projects */
+sr.reveal('.project-card', { interval: 200, origin: 'bottom' })
+
+/* Contact */
+sr.reveal('.contact-content', { origin: 'bottom' })
 
 /*==================== EXPERIENCE YEAR CALCULATION ====================*/
 // Calculate experience from Jan 1, 2021
