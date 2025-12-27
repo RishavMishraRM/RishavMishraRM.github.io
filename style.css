@@ -1181,10 +1181,10 @@ body.light-theme .nav-menu {
 /* RESPONSIVE MEDIA QUERIES */
 @media screen and (max-width: 768px) {
     .header {
-        bottom: 0;
-        top: initial;
-        border-bottom: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        top: 0;
+        bottom: auto;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-top: none;
         height: 4rem;
         padding: 0;
         backdrop-filter: blur(20px);
@@ -1200,12 +1200,24 @@ body.light-theme .nav-menu {
         align-items: center;
     }
 
-    .nav-toggle,
-    .nav-close {
+    .nav-toggle {
         display: block;
         font-size: 1.5rem;
         color: var(--title-color);
         cursor: pointer;
+    }
+
+    .nav-close {
+        display: block;
+        position: absolute;
+        /* Key fix: Position it relative to the menu container */
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        color: var(--title-color);
+        cursor: pointer;
+        z-index: 1005;
+        /* Above menu items */
     }
 
     /* Fix Nav Menu Bottom Sheet */
