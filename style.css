@@ -1178,6 +1178,7 @@ body.light-theme .nav-menu {
 }
 
 /* RESPONSIVE MEDIA QUERIES */
+/* RESPONSIVE MEDIA QUERIES */
 @media screen and (max-width: 768px) {
     .header {
         bottom: 0;
@@ -1186,91 +1187,131 @@ body.light-theme .nav-menu {
         border-top: 1px solid rgba(255, 255, 255, 0.05);
         height: 4rem;
         padding: 0;
+        backdrop-filter: blur(20px);
+        background: rgba(5, 5, 5, 0.8);
+        z-index: 1000;
     }
 
     .nav-container {
         height: 100%;
-        padding: 0 1rem;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .nav-toggle,
     .nav-close {
         display: block;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         color: var(--title-color);
         cursor: pointer;
     }
 
-    .nav-list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-
-    .nav-close {
-        position: absolute;
-        right: 1.5rem;
-        bottom: 1.5rem;
-        font-size: 1.5rem;
-    }
-
-    /* Mobile Menu - Shows from bottom */
+    /* Fix Nav Menu Bottom Sheet */
     .nav-menu {
         position: fixed;
         bottom: -100%;
-        /* Hidden */
         left: 0;
         width: 100%;
-        background-color: var(--body-color);
-        padding: 4rem 1.5rem 2rem;
-        border-radius: 1.5rem 1.5rem 0 0;
-        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-        transition: .4s;
+        background-color: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 4rem 1.5rem 3rem;
+        border-radius: 2rem 2rem 0 0;
+        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+        transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
         z-index: var(--z-fixed);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Show Navigation Class */
     .show-menu {
         bottom: 0;
     }
 
-    .nav-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: var(--small-font-size);
+    .nav-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cols for better touch targets */
+        gap: 1.5rem;
+        text-align: center;
     }
 
+    .nav-link {
+        display: block;
+        padding: 1rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* HERO FIXES */
     .home-container {
         grid-template-columns: 1fr;
-        padding-top: 2rem;
+        padding-top: 6rem;
+        /* More space top */
+        gap: 3rem;
     }
 
     .home-content {
         order: 1;
-        text-align: center;
+        padding: 0 1rem;
     }
 
-    .home-buttons {
-        justify-content: center;
+    .visual-wrapper {
+        transform: none !important;
+        /* Reset desktop shift */
+        margin: 0 auto;
+        padding: 0 1rem;
+        perspective: none;
+        /* Reduce 3D on mobile for performance */
     }
 
-    .home-visual {
-        order: 0;
+    /* CODE CARD MOBILE FIX */
+    .code-card {
+        padding: 1.5rem;
+        /* Drastically reduce padding */
+        max-width: 100%;
+        border-radius: 1.5rem;
+        transform: none !important;
+        /* Flatten 3D */
+    }
+
+    .card-header {
         margin-bottom: 2rem;
+        /* Reduce gap */
     }
 
-    .skills-container {
+    /* PARTING SEA TEXT FIX */
+    .home-title {
+        font-size: 2.5rem;
+        /* Smaller text */
+        flex-direction: column;
+        /* Stack names on extremely small screens if needed, usually row is fine but smaller */
+        gap: 1rem;
+    }
+
+    .hero-left,
+    .hero-right {
+        /* Ensure they don't screen wrap awkwardly */
+        display: inline-block;
+    }
+
+    /* GENERAL CARD STACKING */
+    .projects-container,
+    .education-content,
+    .about-info {
         grid-template-columns: 1fr;
+        padding: 0 1rem;
     }
 
-    .contact-info {
-        grid-template-columns: 1fr;
+    .section {
+        padding: 4rem 0 2rem;
     }
 
+    /* HIDE CURSOR ON TOUCH */
     .cursor-dot,
     .cursor-outline {
-        display: none;
+        display: none !important;
     }
 }
 
