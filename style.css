@@ -494,10 +494,13 @@ body.light-theme .header {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     /* Top highlight */
-    border-radius: 1.5rem;
+    border-radius: 2.5rem;
+    /* More curved */
     width: 100%;
-    max-width: 480px;
-    padding: 2rem;
+    max-width: 520px;
+    /* Slightly wider */
+    padding: 3.5rem;
+    /* Spacious */
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
     transform: rotateY(-18deg) rotateX(10deg);
     /* Increased angle */
