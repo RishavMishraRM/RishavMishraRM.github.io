@@ -110,8 +110,8 @@ if (themeButton) {
 }
 
 /*==================== 3D TILT EFFECT ====================*/
-// We apply this to .project-card and .code-card for that premium feel
-const tiltElements = document.querySelectorAll('.project-card, .code-card');
+// Applied to all major box elements for consistent premium feel
+const tiltElements = document.querySelectorAll('.project-card, .code-card, .experience-card, .education-card, .about-box');
 
 tiltElements.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -123,12 +123,12 @@ tiltElements.forEach(card => {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        // Get rotation values (max rotation 15deg)
-        const rotateX = ((y - centerY) / centerY) * -10;
-        const rotateY = ((x - centerX) / centerX) * 10;
+        // Get rotation values (max rotation 8deg for subtle, premium feel)
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
 
         // Apply transform
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
     });
 
     card.addEventListener('mouseleave', () => {
