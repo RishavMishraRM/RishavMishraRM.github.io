@@ -1209,110 +1209,122 @@ body.light-theme .nav-menu {
     }
 
     /* Fix Nav Menu Bottom Sheet */
+    /* Fix Nav Menu - Top Dropdown Style */
     .nav-menu {
         position: fixed;
-        bottom: -100%;
+        top: -150%;
         left: 0;
         width: 100%;
-        background-color: rgba(10, 10, 10, 0.95);
+        background-color: rgba(10, 10, 10, 0.98);
         backdrop-filter: blur(20px);
-        padding: 4rem 1.5rem 3rem;
-        border-radius: 2rem 2rem 0 0;
-        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+        padding: 2rem 1.5rem 2.5rem;
+        border-radius: 0 0 2rem 2rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
         z-index: var(--z-fixed);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 
     .show-menu {
-        bottom: 0;
+        top: 4rem;
+        /* Slides down below the header */
+        bottom: auto;
+        /* Ensure bottom is unset */
     }
 
     .nav-list {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 cols for better touch targets */
-        gap: 1.5rem;
-        text-align: center;
-    }
-
-    .nav-link {
-        display: block;
-        padding: 1rem;
-        border-radius: 1rem;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    /* HERO FIXES */
-    .home-container {
         grid-template-columns: 1fr;
-        padding-top: 6rem;
-        /* More space top */
-        gap: 3rem;
-    }
-
-    .home-content {
-        order: 1;
-        padding: 0 1rem;
-    }
-
-    .visual-wrapper {
-        transform: none !important;
-        /* Reset desktop shift */
-        margin: 0 auto;
-        padding: 0 1rem;
-        perspective: none;
-        /* Reduce 3D on mobile for performance */
-    }
-
-    /* CODE CARD MOBILE FIX */
-    .code-card {
-        padding: 1.5rem;
-        /* Drastically reduce padding */
-        max-width: 100%;
-        border-radius: 1.5rem;
-        transform: none !important;
-        /* Flatten 3D */
-    }
-
-    .card-header {
-        margin-bottom: 2rem;
-        /* Reduce gap */
-    }
-
-    /* PARTING SEA TEXT FIX */
-    .home-title {
-        font-size: 2.5rem;
-        /* Smaller text */
-        flex-direction: column;
-        /* Stack names on extremely small screens if needed, usually row is fine but smaller */
+        /* Single column */
         gap: 1rem;
+        text-align: center;
+        width: 100%;
     }
 
-    .hero-left,
-    .hero-right {
-        /* Ensure they don't screen wrap awkwardly */
-        display: inline-block;
-    }
+    /* Fixed: Removed duplicate lines */
+}
 
-    /* GENERAL CARD STACKING */
-    .projects-container,
-    .education-content,
-    .about-info {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
-    }
+.nav-link {
+    display: block;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-    .section {
-        padding: 4rem 0 2rem;
-    }
+/* HERO FIXES */
+.home-container {
+    grid-template-columns: 1fr;
+    padding-top: 6rem;
+    /* More space top */
+    gap: 3rem;
+}
 
-    /* HIDE CURSOR ON TOUCH */
-    .cursor-dot,
-    .cursor-outline {
-        display: none !important;
-    }
+.home-content {
+    order: 1;
+    padding: 0 1rem;
+}
+
+.visual-wrapper {
+    transform: none !important;
+    /* Reset desktop shift */
+    margin: 0 auto;
+    padding: 0 1rem;
+    perspective: none;
+    /* Reduce 3D on mobile for performance */
+}
+
+/* CODE CARD MOBILE FIX */
+.code-card {
+    padding: 1.5rem;
+    /* Drastically reduce padding */
+    max-width: 100%;
+    border-radius: 1.5rem;
+    transform: none !important;
+    /* Flatten 3D */
+}
+
+.card-header {
+    margin-bottom: 2rem;
+    /* Reduce gap */
+}
+
+/* PARTING SEA TEXT FIX */
+.home-title {
+    font-size: 2.5rem;
+    /* Smaller text */
+    flex-direction: column;
+    /* Stack names on extremely small screens if needed, usually row is fine but smaller */
+    gap: 1rem;
+}
+
+.hero-left,
+.hero-right {
+    /* Ensure they don't screen wrap awkwardly */
+    display: inline-block;
+}
+
+/* GENERAL CARD STACKING */
+.projects-container,
+.education-content,
+.about-info {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+}
+
+.section {
+    padding: 4rem 0 2rem;
+}
+
+/* HIDE CURSOR ON TOUCH */
+.cursor-dot,
+.cursor-outline {
+    display: none !important;
+}
 }
 
 @media screen and (min-width: 576px) {
