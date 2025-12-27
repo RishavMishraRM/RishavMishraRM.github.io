@@ -267,3 +267,54 @@ document.querySelectorAll(".nav-link").forEach(item => {
         }, 30);
     }
 });
+
+/*==================== PREMIUM STARTUP SOUND (Web Audio API) ====================*/
+function playStartupSound() {
+    if (window.hasPlayedStartupSound) return;
+
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+
+    const ctx = new AudioContext();
+
+    // Context must be resumed on some browsers even in handler
+    if (ctx.state === 'suspended') {
+        ctx.resume();
+    }
+
+    const oscillator = ctx.createOscillator();
+    const gainNode = ctx.createGain();
+
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(220, ctx.currentTime); // A3
+    oscillator.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 1); // Sweep to A5
+
+    // Volume configuration
+    gainNode.gain.setValueAtTime(0, ctx.currentTime);
+    gainNode.gain.linearRampToValueAtTime(0.5, ctx.currentTime + 0.1); // Fade in
+    gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 2); // Fade out
+
+    oscillator.connect(gainNode);
+    gainNode.connect(ctx.destination);
+
+    oscillator.start();
+    oscillator.stop(ctx.currentTime + 2);
+
+    window.hasPlayedStartupSound = true;
+    console.log("🔊 Premium Startup Sound Played");
+}
+
+// Initialize sound on first user interaction (Browser Policy)
+const initSound = () => {
+    playStartupSound();
+    // Cleanup listeners
+    document.removeEventListener('click', initSound);
+    document.removeEventListener('keydown', initSound);
+    document.removeEventListener('touchstart', initSound);
+};
+
+// Global listeners to catch any first interaction
+document.addEventListener('click', initSound, { once: true });
+document.addEventListener('touchstart', initSound, { once: true });
+document.addEventListener('keydown', initSound, { once: true });
+
