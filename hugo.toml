@@ -49,8 +49,8 @@ source = 'assets/notwatching/hugo_stats\.json'
 target = 'css'
 
 ############################# Outputs ############################
-[outputs]
-home = ["HTML", "RSS", "WebAppManifest", "SearchIndex"]
+# [outputs]
+# home = ["HTML", "RSS", "WebAppManifest", "SearchIndex"]
 
 ############################# Imaging ############################
 [imaging]
