@@ -24,18 +24,21 @@ type Experience struct {
 	Description string
 }
 
+type Education struct {
+	Degree      string
+	Institution string
+	Year        string
+	Grade       string
+}
+
 type PortfolioData struct {
 	Name       string
 	Label      string
 	Bio        string
 	Experiences []Experience
 	Projects   []Project
+	Education  []Education
 	Socials    []Social
-}
-
-type Social struct {
-	Platform string
-	URL      string
 }
 
 func main() {
@@ -44,40 +47,66 @@ func main() {
 
 	data := PortfolioData{
 		Name:  "Rishav Kumar Mishra",
-		Label: "Banking Professional & Tech Enthusiast",
-		Bio:   "A dedicated banking professional with expertise in financial operations, now bridging the gap between finance and technology. Passionate about building efficient solutions and exploring the world of software development.",
+		Label: "Product Manager | System Analyst | API & Digital Payments Expert",
+		Bio:   "Professional with 3.5+ years of experience in the Payment Industry (BFSI), specializing in Digital Banking, API Banking, and Core Banking systems. Currently leading Generative AI initiatives to enhance customer interactions. Expert in managing end-to-end digital payment ecosystem journeys and driving Go-to-Market strategies.",
 		Experiences: []Experience{
 			{
-				Company:     "Banking Sector",
-				Role:        "Banking Operations Specialist",
-				Duration:    "2020 - Present",
-				Description: "Managing day-to-day banking operations, ensuring compliance with regulations, and delivering exceptional customer service. Analyzing financial data to support decision-making processes.",
+				Company:     "HDFC Bank",
+				Role:        "System Analyst",
+				Duration:    "July 2022 - Present",
+				Description: "Leading Core Credit Card Platform & API Banking initiatives. Managing Fraud Prevention ML projects and Generative AI Call Bots. Delivered strategic projects across channels and designed omnichannel credit card journeys. Key achievements include launching Smart EMI on WhatsApp and driving Mobile Banking modernization.",
 			},
 			{
-				Company:     "Financial Institution",
-				Role:        "Analyst Intern",
-				Duration:    "2019 - 2020",
-				Description: "Assisted in credit analysis, risk assessment, and portfolio management tasks.",
+				Company:     "HighRadius",
+				Role:        "Data Analyst Trainee",
+				Duration:    "Aug 2021 - July 2022",
+				Description: "Developed real-time dashboards using Tableau for GTM decision-making. Streamlined data pipelines using SQL and Snowflake. Conducted POCs for ML models predicting project costs.",
+			},
+			{
+				Company:     "Wipro",
+				Role:        "Turbo Trainee",
+				Duration:    "March 2022 - July 2022",
+				Description: "Developed a web-based ATM simulator using HTML/CSS/JS and a Java-based movie ticket booking system.",
 			},
 		},
 		Projects: []Project{
 			{
-				Title:       "Portfolio Website",
-				Description: "A high-performance personal portfolio website built with Go, featuring responsive design and automated deployment.",
-				Tags:        []string{"Go", "HTML5", "CSS3", "GitHub Actions"},
+				Title:       "Generative AI Conversational Agent",
+				Description: "Engineered a prompt-based conversational AI bot to automate customer interactions for Lending and Collections.",
+				Tags:        []string{"GenAI", "LLM", "Python", "Automation"},
 				Link:        "#",
 			},
 			{
-				Title:       "Financial Calculator",
-				Description: "A utility tool for calculating loan EMIs and investment returns, showcasing the intersection of finance and coding.",
-				Tags:        []string{"JavaScript", "Math"},
+				Title:       "Smart EMI on WhatsApp",
+				Description: "Launched India’s first end-to-end financial transaction over chat, increasing engagement and setting a benchmark for conversational banking.",
+				Tags:        []string{"WhatsApp API", "Fintech", "Product Launch"},
 				Link:        "#",
+			},
+			{
+				Title:       "Loan On Card Platform",
+				Description: "Designed and implemented customer journeys handling 5M+ hits and ₹400B+ monthly disbursals.",
+				Tags:        []string{"Banking Architecture", "Scale", "Digital Journey"},
+				Link:        "#",
+			},
+		},
+		Education: []Education{
+			{
+				Degree:      "M.Tech in Artificial Intelligence & Data Science",
+				Institution: "Indian Institute of Technology, Patna",
+				Year:        "2026 (Pursuing)",
+				Grade:       "",
+			},
+			{
+				Degree:      "B.Tech in Computer Science & Engineering",
+				Institution: "SRM Institute of Science & Technology, Chennai",
+				Year:        "2022",
+				Grade:       "9 CGPA",
 			},
 		},
 		Socials: []Social{
 			{Platform: "GitHub", URL: "https://github.com/RishavMishraRM"},
-			{Platform: "LinkedIn", URL: "https://linkedin.com"},
-			{Platform: "Email", URL: "mailto:rishav@example.com"},
+			{Platform: "LinkedIn", URL: "https://linkedin.com/in/rishavkumarmishra"},
+			{Platform: "Email", URL: "mailto:rishav.mishra.rkm@gmail.com"},
 		},
 	}
 
