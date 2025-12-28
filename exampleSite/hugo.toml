@@ -2,7 +2,7 @@
 # The base URL of your site (required). This will be prepended to all relative URLs.
 baseURL = "https://rishavmishrarm.github.io/"
 # Title of your website (required).
-title = "Hugoplate"
+title = "Rishav Kumar Mishra"
 # Your theme name
 # theme = "hugoplate"
 theme = "hugoplate"
