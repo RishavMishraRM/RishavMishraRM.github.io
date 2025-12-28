@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode }}" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: "#0b0b0b",
+                        light: "#ffffff",
+                        primary: "#2563eb",
+                        secondary: "#1e1e1e",
+                        accent: "#a855f7",
+                        surface: "#111111",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    {{/*
+    {{ $opts := dict "inlineImports" true }}
+    {{ $styles := resources.Get "css/main.css" | resources.PostCSS $opts }}
+    {{ if hugo.IsProduction }}
+    {{ $styles = $styles | minify | fingerprint }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+    */}}
+    <style>
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+        }
+
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            /* Vendor prefix for Safari/Chrome */
+            color: transparent;
+            background-image: linear-gradient(to right, #60a5fa, #9333ea);
+        }
+
+        .gradient-text-fallback {
+            color: #60a5fa;
+            /* Fallback for browsers that don't support background-clip: text */
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-sans antialiased">
+    {{ partial "header.html" . }}
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+</body>
+
+</html>

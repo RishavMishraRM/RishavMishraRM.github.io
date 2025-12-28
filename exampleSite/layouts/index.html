@@ -1,0 +1,116 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 overflow-hidden">
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <div class="inline-block mb-4 px-3 py-1 bg-gray-800/50 rounded-full text-sm text-blue-400 border border-gray-700">
+      New feature: AI Integration &rarr;
+    </div>
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+      Focus on your business, <br>
+      we take care of the rest.
+    </h1>
+    <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+      Darkrise is a modern, responsive, and feature-rich Hugo theme designed for SaaS, startup, and software companies.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+      <a href="#" class="btn-primary">Start Free Trial</a>
+      <a href="#" class="btn-secondary">Request Demo</a>
+    </div>
+    
+    <!-- Hero Image / Dashboard Mockup -->
+    <div class="relative max-w-5xl mx-auto">
+      <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-25"></div>
+      <img src="https://darkrise-hugo.vercel.app/images/dashboard.png" alt="Dashboard" class="relative rounded-xl border border-gray-800 shadow-2xl bg-gray-900 w-full">
+    </div>
+  </div>
+  
+  <!-- Background Glows -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-900/20 rounded-full blur-[100px] -z-10"></div>
+</section>
+
+<!-- Trusted By Section -->
+<section class="py-12 border-y border-white/5 bg-surface">
+  <div class="container mx-auto px-4">
+    <p class="text-center text-gray-500 text-sm mb-8 uppercase tracking-widest">Trusted by 2000+ companies worldwide</p>
+    <div class="flex flex-wrap justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+       <!-- Placeholders for logos -->
+       <span class="text-2xl font-bold font-serif text-white">AcmeCorp</span>
+       <span class="text-2xl font-bold font-sans text-white">GlobalTech</span>
+       <span class="text-2xl font-bold font-mono text-white">Nebula</span>
+       <span class="text-2xl font-bold font-serif text-white">Circle</span>
+       <span class="text-2xl font-bold font-sans text-white">FoxHub</span>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section 1 -->
+<section class="py-24">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center gap-16">
+      <div class="w-full md:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Analyze your data with <span class="gradient-text">precision</span></h2>
+        <p class="text-gray-400 mb-6 text-lg">Gain valuable insights into your business performance with our advanced analytics dashboard. Track key metrics, visualize trends, and make data-driven decisions.</p>
+        <ul class="space-y-4 text-gray-300">
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Real-time data synchronization
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Customizable reports
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Export to PDF/CSV
+          </li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/2">
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative bg-gray-900 border border-gray-800 rounded-2xl p-6 h-80 flex items-center justify-center">
+                 <span class="text-gray-600">Feature Image Placeholder</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section 2 - Flipped -->
+<section class="py-24 bg-surface/50">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row-reverse items-center gap-16">
+      <div class="w-full md:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Collaborate seamlessly with your <span class="gradient-text">team</span></h2>
+        <p class="text-gray-400 mb-6 text-lg">Work together in real-time. Share projects, leave comments, and manage tasks efficiently with built-in collaboration tools.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-2">
+          Learn more 
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </a>
+      </div>
+      <div class="w-full md:w-1/2">
+         <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative bg-gray-900 border border-gray-800 rounded-2xl p-6 h-80 flex items-center justify-center">
+                 <span class="text-gray-600">Collaboration Image Placeholder</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-blue-900/10"></div>
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <h2 class="text-4xl font-bold mb-6">Ready to get started?</h2>
+    <p class="text-gray-400 mb-8 max-w-xl mx-auto">Join thousands of companies using Darkrise to scale their business.</p>
+    <a href="#" class="btn-primary text-lg px-8 py-4">Start your 14-day free trial</a>
+    <p class="mt-4 text-sm text-gray-500">No credit card required.</p>
+  </div>
+</section>
+
+{{ end }}

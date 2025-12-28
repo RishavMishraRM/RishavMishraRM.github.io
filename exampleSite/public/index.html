@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-us" class="scroll-smooth">
+
+<head>
+	<meta name="generator" content="Hugo 0.153.3"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hugoplate</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: "#0b0b0b",
+                        light: "#ffffff",
+                        primary: "#2563eb",
+                        secondary: "#1e1e1e",
+                        accent: "#a855f7",
+                        surface: "#111111",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+        }
+
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+             
+            color: transparent;
+            background-image: linear-gradient(to right, #60a5fa, #9333ea);
+        }
+
+        .gradient-text-fallback {
+            color: #60a5fa;
+             
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-sans antialiased">
+    <header class="fixed w-full top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+        
+        <a href="/" class="text-2xl font-bold text-white flex items-center gap-2">
+            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">D</div>
+            Darkrise
+        </a>
+
+        
+        <nav class="hidden md:flex items-center gap-8">
+            
+            <a href="/" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">Home</a>
+            
+            <a href="/about" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">About</a>
+            
+            <a href="/elements" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">Elements</a>
+            
+            <a href="" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">Pages</a>
+            
+            
+            <a href="#" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">Pricing</a>
+            <a href="#" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">About</a>
+            <a href="#" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">Blog</a>
+            <a href="#" class="text-gray-300 hover:text-white font-medium text-sm transition-colors">Contact</a>
+        </nav>
+
+        
+        <div class="hidden md:flex items-center gap-4">
+            <a href="#" class="text-gray-300 hover:text-white font-medium text-sm">Sign In</a>
+            <a href="#"
+                class="bg-white text-black px-4 py-2 rounded-md font-bold text-sm hover:bg-gray-200 transition-colors">Get
+                Started</a>
+        </div>
+
+        
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-dark z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col pt-24 px-6">
+        <a href="#" class="text-xl font-medium text-white border-b border-gray-800 py-4">Home</a>
+        <a href="#" class="text-xl font-medium text-white border-b border-gray-800 py-4">Pricing</a>
+        <a href="#" class="text-xl font-medium text-white border-b border-gray-800 py-4">About</a>
+        <a href="#" class="text-xl font-medium text-white border-b border-gray-800 py-4">Blog</a>
+        <a href="#" class="text-xl font-medium text-white border-b border-gray-800 py-4">Contact</a>
+        <div class="mt-8 flex flex-col gap-4">
+            <a href="#" class="btn-secondary text-center">Sign In</a>
+            <a href="#" class="btn-primary text-center">Get Started</a>
+        </div>
+    </div>
+</header>
+
+<script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
+
+    menuBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            mobileMenu.classList.remove('translate-x-full');
+            
+            menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+        } else {
+            mobileMenu.classList.add('translate-x-full');
+            
+            menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>';
+        }
+    });
+</script>
+    <main>
+        
+
+
+<section class="relative pt-32 pb-20 overflow-hidden">
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <div class="inline-block mb-4 px-3 py-1 bg-gray-800/50 rounded-full text-sm text-blue-400 border border-gray-700">
+      New feature: AI Integration &rarr;
+    </div>
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+      Focus on your business, <br>
+      we take care of the rest.
+    </h1>
+    <p class="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+      Darkrise is a modern, responsive, and feature-rich Hugo theme designed for SaaS, startup, and software companies.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+      <a href="#" class="btn-primary">Start Free Trial</a>
+      <a href="#" class="btn-secondary">Request Demo</a>
+    </div>
+    
+    
+    <div class="relative max-w-5xl mx-auto">
+      <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl blur opacity-25"></div>
+      <img src="https://darkrise-hugo.vercel.app/images/dashboard.png" alt="Dashboard" class="relative rounded-xl border border-gray-800 shadow-2xl bg-gray-900 w-full">
+    </div>
+  </div>
+  
+  
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-900/20 rounded-full blur-[100px] -z-10"></div>
+</section>
+
+
+<section class="py-12 border-y border-white/5 bg-surface">
+  <div class="container mx-auto px-4">
+    <p class="text-center text-gray-500 text-sm mb-8 uppercase tracking-widest">Trusted by 2000+ companies worldwide</p>
+    <div class="flex flex-wrap justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+       
+       <span class="text-2xl font-bold font-serif text-white">AcmeCorp</span>
+       <span class="text-2xl font-bold font-sans text-white">GlobalTech</span>
+       <span class="text-2xl font-bold font-mono text-white">Nebula</span>
+       <span class="text-2xl font-bold font-serif text-white">Circle</span>
+       <span class="text-2xl font-bold font-sans text-white">FoxHub</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-24">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center gap-16">
+      <div class="w-full md:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Analyze your data with <span class="gradient-text">precision</span></h2>
+        <p class="text-gray-400 mb-6 text-lg">Gain valuable insights into your business performance with our advanced analytics dashboard. Track key metrics, visualize trends, and make data-driven decisions.</p>
+        <ul class="space-y-4 text-gray-300">
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Real-time data synchronization
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Customizable reports
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Export to PDF/CSV
+          </li>
+        </ul>
+      </div>
+      <div class="w-full md:w-1/2">
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative bg-gray-900 border border-gray-800 rounded-2xl p-6 h-80 flex items-center justify-center">
+                 <span class="text-gray-600">Feature Image Placeholder</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-24 bg-surface/50">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row-reverse items-center gap-16">
+      <div class="w-full md:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Collaborate seamlessly with your <span class="gradient-text">team</span></h2>
+        <p class="text-gray-400 mb-6 text-lg">Work together in real-time. Share projects, leave comments, and manage tasks efficiently with built-in collaboration tools.</p>
+        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-2">
+          Learn more 
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </a>
+      </div>
+      <div class="w-full md:w-1/2">
+         <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative bg-gray-900 border border-gray-800 rounded-2xl p-6 h-80 flex items-center justify-center">
+                 <span class="text-gray-600">Collaboration Image Placeholder</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-blue-900/10"></div>
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <h2 class="text-4xl font-bold mb-6">Ready to get started?</h2>
+    <p class="text-gray-400 mb-8 max-w-xl mx-auto">Join thousands of companies using Darkrise to scale their business.</p>
+    <a href="#" class="btn-primary text-lg px-8 py-4">Start your 14-day free trial</a>
+    <p class="mt-4 text-sm text-gray-500">No credit card required.</p>
+  </div>
+</section>
+
+
+    </main>
+    <footer class="bg-surface border-t border-white/5 pt-20 pb-10">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
+            <div class="col-span-2 lg:col-span-2">
+                <a href="/" class="text-2xl font-bold text-white mb-4 block">Darkrise</a>
+                <p class="text-gray-400 mb-6 max-w-sm">
+                    A premium Hugo theme for SaaS and startups. Build your next project with ease and style.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+
+            
+            <div>
+                <h4 class="text-white font-bold mb-6">Product</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Integrations</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Changelog</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6">Company</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6">Legal</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/5 pt-8 text-center text-gray-500 text-sm">
+            &copy; 2025 Darkrise. All rights reserved.
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
