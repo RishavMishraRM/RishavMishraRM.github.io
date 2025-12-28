@@ -41,6 +41,11 @@ type PortfolioData struct {
 	Socials    []Social
 }
 
+type Social struct {
+	Platform string
+	URL      string
+}
+
 func main() {
 	build := flag.Bool("build", false, "Generate static index.html")
 	flag.Parse()
