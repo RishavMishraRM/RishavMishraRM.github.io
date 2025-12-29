@@ -1457,33 +1457,64 @@ footer p {
 }
 
 /* The dots */
+/* The dots */
 .timeline-dot {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     background: var(--bg-color);
     border: 2px solid var(--primary-color);
-    box-shadow: 0 0 5px var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+    /* Halo effect */
     border-radius: 50%;
     position: absolute;
-    top: 20px;
-    right: -7px;
-    z-index: 1;
+    top: 22px;
+    right: -6px;
+    z-index: 2;
 }
 
 .timeline-item.right .timeline-dot {
-    left: -7px;
+    left: -6px;
 }
 
+
+/* Content Box */
 /* Content Box */
 .timeline-content {
     padding: 0.8rem 1rem;
     background: var(--card-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
-    border-radius: 12px;
+    border-radius: 8px;
+    /* Slightly squarer like Workday */
     position: relative;
     transition: var(--transition-smooth);
+    margin: 0 10px;
+    /* Space for connector */
 }
+
+/* Connector Lines */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    /* Aligns with dot center */
+    width: 32px;
+    /* Length of connector */
+    height: 2px;
+    background: var(--primary-color);
+    opacity: 0.3;
+}
+
+.timeline-item.left .timeline-content::before {
+    right: -32px;
+    /* Extend to right */
+}
+
+.timeline-item.right .timeline-content::before {
+    left: -32px;
+    /* Extend to left */
+}
+
 
 .timeline-content:hover {
     transform: translateY(-3px);
