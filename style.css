@@ -302,7 +302,7 @@ ul {
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 80px;
+    padding-top: 140px;
 }
 
 .hero .container {
@@ -329,8 +329,18 @@ ul {
 }
 
 [data-theme="light"] .hero-badge {
-    background: rgba(124, 58, 237, 0.05);
-    border-color: rgba(124, 58, 237, 0.2);
+    background: #ffffff;
+    border-color: rgba(124, 58, 237, 0.3);
+    box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.2);
+}
+
+[data-theme="light"] .hero-badge span {
+    color: #4c1d95;
+    font-weight: 800;
+}
+
+[data-theme="light"] .hero-badge i {
+    color: #7c3aed;
 }
 
 .hero-badge i {
@@ -358,12 +368,23 @@ ul {
     letter-spacing: -2px;
 }
 
+[data-theme="light"] .hero-title {
+    background: linear-gradient(135deg, #0c0a09 0%, #4338ca 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
 .hero-description {
     font-size: 1.25rem;
     color: var(--text-muted);
     line-height: 1.8;
     margin-bottom: 3rem;
     max-width: 700px;
+}
+
+[data-theme="light"] .hero-description {
+    color: #334155;
+    /* Slate 700 for better contrast */
 }
 
 .hero-description .tag {
@@ -376,8 +397,9 @@ ul {
 }
 
 [data-theme="light"] .hero-description .tag {
-    background: rgba(124, 58, 237, 0.1);
-    color: var(--primary-color);
+    background: rgba(124, 58, 237, 0.08);
+    color: #5b21b6;
+    border-color: rgba(124, 58, 237, 0.15);
 }
 
 .hero-meta {
@@ -841,6 +863,25 @@ ul {
     color: var(--text-color);
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] .skill-banner-item {
+    background: #ffffff;
+    border-color: rgba(124, 58, 237, 0.15);
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .skill-banner-item:hover {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+[data-theme="light"] .skill-banner-item i {
+    color: #7c3aed;
+}
+
+[data-theme="light"] .skill-banner-item:hover i {
+    color: #ffffff;
 }
 
 .skill-banner-item:hover {
