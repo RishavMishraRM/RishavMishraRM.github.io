@@ -201,7 +201,7 @@ class ParticlesBackground {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         const theme = document.documentElement.getAttribute('data-theme');
-        const color = theme === 'light' ? '124, 58, 237' : '255, 255, 255';
+        const color = theme === 'light' ? '218, 165, 32' : '255, 255, 255';
 
         this.particles.forEach((p, i) => {
             p.x += p.vx;
