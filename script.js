@@ -111,10 +111,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form Submission Handling
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Message sent successfully! (Note: This is a demo)');
-            contactForm.reset();
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Thanks for your message! I will get back to you soon.');
+                    contactForm.reset();
+                } else {
+                    alert('Oops! There was a problem sending your message. Please check the Form ID.');
+                }
+            } catch (error) {
+                alert('Oops! There was a problem sending your message.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         });
     }
 
