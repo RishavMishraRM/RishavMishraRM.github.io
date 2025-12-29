@@ -69,8 +69,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for saved theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            // Re-initialize Lucide icons for the new theme if needed
+            lucide.createIcons();
+        });
+    }
 
     // Simple Scroll Animation (Intersection Observer)
     const observerOptions = {
@@ -99,6 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
 });
 
 // Add fade-in styles dynamically
