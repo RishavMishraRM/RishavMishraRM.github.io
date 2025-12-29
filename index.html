@@ -20,12 +20,6 @@
 <body class="dark-theme">
     <div class="cursor-glow"></div>
 
-    <!-- AI Status Indicator -->
-    <div class="ai-status-float">
-        <div class="status-dot-pulse"></div>
-        <span>AI ORCHESTRATOR ACTIVE</span>
-    </div>
-
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">R<span>M</span></a>
@@ -42,43 +36,18 @@
         </div>
     </nav>
 
-    <div id="neural-canvas-container"
-        style="position: absolute; top:0; left:0; width:100%; height:100vh; pointer-events: none; z-index: -1;">
-        <canvas id="neural-canvas"></canvas>
-    </div>
-
     <main>
         <section id="home" class="hero section">
-            <div class="container hero-container">
-                <div class="hero-content" data-reveal>
-                    <div class="badge-container">
-                        <span class="gen-ai-badge">
-                            <i data-lucide="brain-circuit"></i>
-                            GEN-AI & BFSI ORCHESTRATOR
-                        </span>
-                    </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-subtitle">Hello, I'm</h2>
                     <h1 class="hero-title">Rishav Mishra</h1>
                     <p class="hero-description">
-                        Architecting hyper-scale <span>Payment Core</span> systems and orchestrating
-                        <span>LLM-powered</span> banking agents. Specialist in <span>API Banking</span> at <span>HDFC
-                            Bank</span>.
+                        <span>Generative AI Engineer</span> specializing in <span id="typewriter"></span>.
                     </p>
-                    <div class="hero-meta">
-                        <div class="meta-item">
-                            <span class="meta-label">Domain</span>
-                            <span class="meta-value">Fintech / GenAI</span>
-                        </div>
-                        <div class="meta-item">
-                            <span class="meta-label">M.Tech</span>
-                            <span class="meta-value">IIT Patna (AI & DS)</span>
-                        </div>
-                    </div>
                     <div class="hero-btns">
-                        <a href="#projects" class="btn btn-primary">
-                            <span>Explore Portfolio</span>
-                            <i data-lucide="arrow-right"></i>
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">Direct Message</a>
+                        <a href="#projects" class="btn btn-primary">View Experience</a>
+                        <a href="#contact" class="btn btn-secondary">Let's Talk</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -96,9 +65,9 @@
                         </div>
                         <div class="code-body">
                             <pre><code>{
-  <span class="key">"status"</span>: <span class="string">"Leading GenAI @ HDFC"</span>,
-  <span class="key">"education"</span>: <span class="string">"M.Tech @ IIT Patna"</span>,
-  <span class="key">"location"</span>: <span class="string">"Noida, India"</span>
+  <span class="key">"focus"</span>: <span class="string">"LLM Agents & RAG"</span>,
+  <span class="key">"stack"</span>: <span class="string">"LangChain, OpenAI, Python"</span>,
+  <span class="key">"current"</span>: <span class="string">"Building GenAI @ HDFC"</span>
 }</code></pre>
                         </div>
                     </div>
@@ -118,20 +87,24 @@
                 </div>
                 <div class="about-grid">
                     <div class="about-text">
-                        <p>I am a Product Manager and System Analyst with over 3.5 years of experience in the Payment
-                            Industry specifically within the BFSI sector. I specialize in Digital Banking, API
-                            orchestration, and Core Banking systems.</p>
-                        <p>Currently, I am leading the development of Generative AI-powered Conversational Agents for
-                            Lending and Collections at HDFC Bank, bridging the gap between traditional banking and
-                            cutting-edge AI.</p>
+                        <p>
+                            As a <span>Generative AI Engineer</span> at HDFC Bank, I bridge the gap between complex
+                            financial ecosystems and cutting-edge Artificial Intelligence. I specialize in building
+                            GenAI-powered conversational agents that handle millions of interactions.
+                        </p>
+                        <p>
+                            With 3.5+ years of experience in the BFSI sector, I've evolved from API Banking to leading
+                            Generative AI initiatives. My passion lies in engineering agentic workflows that solve
+                            real-world problems at scale.
+                        </p>
                         <div class="about-info">
                             <div class="info-item">
-                                <span class="label">Experience</span>
+                                <span class="label">Total Experience</span>
                                 <span class="value">3.5+ Years</span>
                             </div>
                             <div class="info-item">
-                                <span class="label">Domain</span>
-                                <span class="value">Fintech/BFSI</span>
+                                <span class="label">Specialization</span>
+                                <span class="value">GenAI / LLMs</span>
                             </div>
                             <div class="info-item">
                                 <span class="label">Location</span>
@@ -156,98 +129,158 @@
         </section>
 
         <section id="skills" class="skills section">
-            <div class="container" data-reveal>
+            <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Technical Core</h2>
+                    <h2 class="section-title">Skills</h2>
                     <div class="underline"></div>
                 </div>
                 <div class="skills-grid">
-                    <div class="skill-category premium-card">
-                        <div class="category-header">
-                            <i data-lucide="bot"></i>
-                            <h3>GenAI & Orchestration</h3>
-                        </div>
+                    <div class="skill-category">
+                        <h3>Generative AI & LLMs</h3>
                         <div class="skill-items">
-                            <div class="skill-tag">LLM Fine-tuning</div>
-                            <div class="skill-tag">RAG Pipeline</div>
-                            <div class="skill-tag">LangChain</div>
-                            <div class="skill-tag">Prompt Engineering</div>
-                            <div class="skill-tag">OpenAI API</div>
+                            <span class="skill-tag">LLM Orchestration</span>
+                            <span class="skill-tag">LangChain</span>
+                            <span class="skill-tag">RAG Frameworks</span>
+                            <span class="skill-tag">Prompt Engineering</span>
+                            <span class="skill-tag">Vector DBs (Pinecone/Milvus)</span>
+                            <span class="skill-tag">OpenAI / Claude API</span>
                         </div>
                     </div>
-                    <div class="skill-category premium-card">
-                        <div class="category-header">
-                            <i data-lucide="layers"></i>
-                            <h3>System Architecture</h3>
-                        </div>
+                    <div class="skill-category">
+                        <h3>Backend & AI Ops</h3>
                         <div class="skill-items">
-                            <div class="skill-tag">API Banking</div>
-                            <div class="skill-tag">Microservices</div>
-                            <div class="skill-tag">Payment Gateways</div>
-                            <div class="skill-tag">Redis</div>
-                            <div class="skill-tag">Kafka</div>
+                            <span class="skill-tag">Python (NumPy, Pandas)</span>
+                            <span class="skill-tag">SQL / Snowflake</span>
+                            <span class="skill-tag">API Orchestration</span>
+                            <span class="skill-tag">MLOps</span>
+                            <span class="skill-tag">System Design</span>
                         </div>
                     </div>
-                    <div class="skill-category premium-card">
-                        <div class="category-header">
-                            <i data-lucide="database"></i>
-                            <h3>Data & Analytics</h3>
-                        </div>
+                    <div class="skill-category">
+                        <h3>Strategy & Lead</h3>
                         <div class="skill-items">
-                            <div class="skill-tag">Python (PyTorch)</div>
-                            <div class="skill-tag">Snowflake</div>
-                            <div class="skill-tag">SQL (Expert)</div>
-                            <div class="skill-tag">Tableau</div>
-                            <div class="skill-tag">Airflow</div>
+                            <span class="skill-tag">AI Strategy</span>
+                            <span class="skill-tag">SDLC / Agile</span>
+                            <span class="skill-tag">Risk Management</span>
+                            <span class="skill-tag">PCI DSS</span>
+                            <span class="skill-tag">Solution Design</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="projects section">
+        <section id="projects" class="projects section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Career Orbit</h2>
+                    <h2 class="section-title">Professional Experience</h2>
                     <div class="underline"></div>
                 </div>
                 <div class="project-grid">
-                    <div class="project-card premium-card" data-reveal>
+                    <div class="project-card">
                         <div class="project-info">
                             <div class="project-header">
-                                <div class="client-info">
-                                    <span class="client-label">Current</span>
-                                    <h3>HDFC Bank</h3>
-                                </div>
-                                <span class="project-date">2022 - Present</span>
+                                <h3>HDFC Bank</h3>
+                                <span class="project-date">Jul 2022 - Present</span>
                             </div>
-                            <p class="role-title">Lead Product & System Analyst</p>
-                            <p class="role-desc">Pioneering GenAI calling bots and scaling Core Credit Card API
-                                architectures. Orchestrating high-load payment gateways.</p>
+                            <p class="role-title">Analyst (Full-time)</p>
+                            <p>Leading Core Credit Card API initiatives and GenAI calling bots. Specialized in Risk
+                                Management and API Orchestration.</p>
                             <div class="project-tags">
-                                <span>GenAI</span>
-                                <span>Scalability</span>
-                                <span>Fintech</span>
+                                <span>Data Analytics</span>
+                                <span>Machine Learning</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="project-card premium-card" data-reveal>
+                    <div class="project-card">
                         <div class="project-info">
                             <div class="project-header">
-                                <div class="client-info">
-                                    <span class="client-label">Prev</span>
-                                    <h3>HighRadius</h3>
-                                </div>
-                                <span class="project-date">2021 - 2022</span>
+                                <h3>HighRadius</h3>
+                                <span class="project-date">Jul 2021 - Aug 2022</span>
                             </div>
-                            <p class="role-title">Machine Learning Trainee</p>
-                            <p class="role-desc">Architected ETL pipelines and implemented credit-risk ML models.
-                                Optimized finance automation workflows via RAG.</p>
+                            <p class="role-title">Data Analyst Intern & Trainee</p>
+                            <p>Developed ETL pipelines and GTM dashboards. Conducted POCs for ML models focused on
+                                project cost estimations.</p>
                             <div class="project-tags">
-                                <span>ML Pipelines</span>
-                                <span>Automation</span>
-                                <span>NLP</span>
+                                <span>Data Analytics</span>
+                                <span>Software Development</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <div class="project-header">
+                                <h3>Wipro</h3>
+                                <span class="project-date">Mar 2022 - Jun 2022</span>
+                            </div>
+                            <p class="role-title">Intern</p>
+                            <p>Developed web-based applications for B2B transactions and object-oriented Java systems.
+                            </p>
+                            <div class="project-tags">
+                                <span>Java</span>
+                                <span>JavaScript</span>
+                                <span>SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <div class="project-header">
+                                <h3>NIT Patna</h3>
+                                <span class="project-date">Mar 2021 - Jun 2021</span>
+                            </div>
+                            <p class="role-title">Research Intern</p>
+                            <p>Worked on research-oriented projects utilizing scientific computing libraries.</p>
+                            <div class="project-tags">
+                                <span>SciPy</span>
+                                <span>Python</span>
+                                <span>Research</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <div class="project-header">
+                                <h3>MedTourEasy</h3>
+                                <span class="project-date">Feb 2021 - Mar 2021</span>
+                            </div>
+                            <p class="role-title">Data Science Intern</p>
+                            <p>Applied Python and Machine Learning techniques for data analysis and predictive modeling.
+                            </p>
+                            <div class="project-tags">
+                                <span>Data Analysis</span>
+                                <span>Python</span>
+                                <span>ML</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <div class="project-header">
+                                <h3>The Sparks Foundation</h3>
+                                <span class="project-date">Jan 2021 - Feb 2021</span>
+                            </div>
+                            <p class="role-title">Data Scientist Intern</p>
+                            <p>Executed data science projects and internships tasks involving analytics and
+                                visualization.</p>
+                            <div class="project-tags">
+                                <span>Data Science</span>
+                                <span>Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <div class="project-header">
+                                <h3>BVG India LTD</h3>
+                                <span class="project-date">2020 - 2021</span>
+                            </div>
+                            <p class="role-title">Tech Intern</p>
+                            <p>Assisted in technical operations and supported IT infrastructure projects during the
+                                internship period.</p>
+                            <div class="project-tags">
+                                <span>IT Support</span>
+                                <span>Tech Operations</span>
                             </div>
                         </div>
                     </div>
@@ -281,9 +314,9 @@
         </section>
 
         <section id="contact" class="contact section">
-            <div class="container" data-reveal>
+            <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Initialize Contact</h2>
+                    <h2 class="section-title">Get In Touch</h2>
                     <div class="underline"></div>
                 </div>
                 <div class="contact-wrapper">
