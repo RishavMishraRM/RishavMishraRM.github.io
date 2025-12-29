@@ -1666,6 +1666,12 @@ footer p {
     border-radius: 2px;
 }
 
+.links-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
 .footer-links ul {
     list-style: none;
     padding: 0;
