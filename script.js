@@ -122,17 +122,104 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
 });
 
-// Add fade-in styles dynamically
-const styleTag = document.createElement('style');
-styleTag.textContent = `
-    .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+// Particles / Constellation Background Logic
+class ParticlesBackground {
+    constructor() {
+        this.canvas = document.getElementById('particles-canvas');
+        if (!this.canvas) return;
+
+        this.ctx = this.canvas.getContext('2d');
+        this.particles = [];
+        this.particleCount = window.innerWidth < 768 ? 40 : 80;
+        this.maxDistance = 150;
+        this.mouseDistance = 200;
+        this.mouseX = 0;
+        this.mouseY = 0;
+
+        this.init();
+        this.animate();
+        this.listen();
     }
-    .fade-in.appear {
-        opacity: 1;
-        transform: translateY(0);
+
+    init() {
+        this.resize();
+        this.particles = [];
+        for (let i = 0; i < this.particleCount; i++) {
+            this.particles.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 2 + 1
+            });
+        }
     }
-`;
-document.head.appendChild(styleTag);
+
+    resize() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
+
+    listen() {
+        window.addEventListener('resize', () => this.init());
+        window.addEventListener('mousemove', (e) => {
+            this.mouseX = e.clientX;
+            this.mouseY = e.clientY;
+        });
+    }
+
+    animate() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        const theme = document.documentElement.getAttribute('data-theme');
+        const color = theme === 'light' ? '124, 58, 237' : '255, 255, 255';
+
+        this.particles.forEach((p, i) => {
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
+
+            this.ctx.beginPath();
+            this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            this.ctx.fillStyle = `rgba(${color}, 0.5)`;
+            this.ctx.fill();
+
+            for (let j = i + 1; j < this.particles.length; j++) {
+                const p2 = this.particles[j];
+                const dx = p.x - p2.x;
+                const dy = p.y - p2.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < this.maxDistance) {
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(p.x, p.y);
+                    this.ctx.lineTo(p2.x, p2.y);
+                    this.ctx.strokeStyle = `rgba(${color}, ${0.2 * (1 - dist / this.maxDistance)})`;
+                    this.ctx.lineWidth = 0.5;
+                    this.ctx.stroke();
+                }
+            }
+
+            // Mouse interaction
+            const mdx = p.x - this.mouseX;
+            const mdy = p.y - this.mouseY;
+            const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+            if (mdist < this.mouseDistance) {
+                this.ctx.beginPath();
+                this.ctx.moveTo(p.x, p.y);
+                this.ctx.lineTo(this.mouseX, this.mouseY);
+                this.ctx.strokeStyle = `rgba(${color}, ${0.1 * (1 - mdist / this.mouseDistance)})`;
+                this.ctx.stroke();
+            }
+        });
+
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+// Re-initialize on theme change
+document.addEventListener('DOMContentLoaded', () => {
+    new ParticlesBackground();
+});
