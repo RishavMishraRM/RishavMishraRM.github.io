@@ -69,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
     // Simple Scroll Animation (Intersection Observer)
     const observerOptions = {
         threshold: 0.1
@@ -95,38 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Message sent successfully! (Note: This is a demo)');
             contactForm.reset();
         });
-    }
-
-    // Typewriter Effect for Gen AI Engineer
-    const typewriterElement = document.getElementById('typewriter');
-    if (typewriterElement) {
-        const words = ['LLM Orchestration', 'Agentic Workflows', 'RAG Systems', 'Prompt Engineering', 'AI Agents'];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const currentWord = words[wordIndex];
-            if (isDeleting) {
-                typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                isDeleting = true;
-                setTimeout(type, 2000);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(type, 500);
-            } else {
-                setTimeout(type, isDeleting ? 100 : 200);
-            }
-        }
-        type();
     }
 });
 
