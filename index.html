@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishav Mishra | Portfolio</title>
+    <meta name="description" content="Portfolio of Rishav Mishra - Web Developer and Software Engineer. Showcasing projects, skills, and professional experience.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dark-theme">
+    <div class="cursor-glow"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">R<span>M</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-subtitle">Hello, I'm</h2>
+                    <h1 class="hero-title">Rishav Mishra</h1>
+                    <p class="hero-description">A passionate <span>Web Developer</span> crafting beautiful, high-performance digital experiences with a focus on user-centric design.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="blob-wrapper">
+                        <div class="blob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <span>Scroll Down</span>
+            </div>
+        </section>
+
+        <section id="about" class="about section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I am a creative developer based in India, specializing in building modern web applications. My journey in tech is driven by a constant desire to learn and implement cutting-edge technologies that solve real-world problems.</p>
+                        <p>With a strong foundation in both frontend and backend development, I bridge the gap between design and functionality, ensuring seamless user experiences across all devices.</p>
+                        <div class="about-info">
+                            <div class="info-item">
+                                <span class="label">Experience</span>
+                                <span class="value">2+ Years</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Completed</span>
+                                <span class="value">15+ Projects</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Freelance</span>
+                                <span class="value">Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <i data-lucide="code-2"></i>
+                            <h3>Clean Code</h3>
+                            <p>Writing maintainable and scalable code is my priority.</p>
+                        </div>
+                        <div class="stat-card">
+                            <i data-lucide="layout"></i>
+                            <h3>Responsive</h3>
+                            <p>Websites that look great on any screen size.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Expertise</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="skill-items">
+                            <div class="skill-tag">HTML5</div>
+                            <div class="skill-tag">CSS3</div>
+                            <div class="skill-tag">JavaScript</div>
+                            <div class="skill-tag">React.js</div>
+                            <div class="skill-tag">Next.js</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="skill-items">
+                            <div class="skill-tag">Node.js</div>
+                            <div class="skill-tag">Python</div>
+                            <div class="skill-tag">Go</div>
+                            <div class="skill-tag">MongoDB</div>
+                            <div class="skill-tag">PostgreSQL</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Others</h3>
+                        <div class="skill-items">
+                            <div class="skill-tag">Git & GitHub</div>
+                            <div class="skill-tag">Docker</div>
+                            <div class="skill-tag">Figma</div>
+                            <div class="skill-tag">Vercel</div>
+                            <div class="skill-tag">Firebase</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <!-- Placeholder for project image -->
+                            <div class="img-overlay">
+                                <div class="project-links">
+                                    <a href="#"><i data-lucide="github"></i></a>
+                                    <a href="#"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>NextRealm AI</h3>
+                            <p>An AI-powered research and collaboration platform.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Firebase</span>
+                                <span>Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="img-overlay">
+                                <div class="project-links">
+                                    <a href="#"><i data-lucide="github"></i></a>
+                                    <a href="#"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>E-Commerce Dashboard</h3>
+                            <p>A comprehensive admin panel for online businesses.</p>
+                            <div class="project-tags">
+                                <span>Vue.js</span>
+                                <span>Node.js</span>
+                                <span>D3.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="img-overlay">
+                                <div class="project-links">
+                                    <a href="#"><i data-lucide="github"></i></a>
+                                    <a href="#"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Finance Tracker</h3>
+                            <p>Personal finance management with real-time analytics.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Flask</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a href="https://github.com/RishavMishraRM" class="btn btn-outline" target="_blank">Explore More on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Let's create something together</h3>
+                        <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                        <div class="contact-methods">
+                            <div class="method">
+                                <i data-lucide="mail"></i>
+                                <span>rishavmishra@example.com</span>
+                            </div>
+                            <div class="method">
+                                <i data-lucide="map-pin"></i>
+                                <span>Bhopal, India</span>
+                            </div>
+                        </div>
+                        <div class="social-icons">
+                            <a href="#"><i data-lucide="linkedin"></i></a>
+                            <a href="https://github.com/RishavMishraRM"><i data-lucide="github"></i></a>
+                            <a href="#"><i data-lucide="twitter"></i></a>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rishav Mishra. Built with passion & minimal code.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
