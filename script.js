@@ -120,6 +120,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Lucide Icons
     lucide.createIcons();
+
+    // Total Experience Calculation
+    const expElement = document.getElementById('total-experience');
+    if (expElement) {
+        const startDate = new Date('2020-12-01');
+        const calculateExperience = () => {
+            const now = new Date();
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            // Format to one decimal place if needed, or just years + half
+            // Logic: if 6 months passed, add 0.5. 
+            // Better: just purely based on full years for "X+ Years" or "X.Y Years"
+            // User sample was "3.5+ Years".
+            // Let's do a precise decimal calc:
+            const diffTime = Math.abs(now - startDate);
+            const totalYears = diffTime / (1000 * 60 * 60 * 24 * 365.25);
+            // Round to 1 decimal
+            const formattedYr = totalYears.toFixed(1);
+
+            expElement.textContent = `${formattedYr}+ Years`;
+        };
+        calculateExperience();
+    }
 });
 
 // Particles / Constellation Background Logic
