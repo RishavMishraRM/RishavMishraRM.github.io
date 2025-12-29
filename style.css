@@ -1627,6 +1627,10 @@ footer p {
     align-items: start;
 }
 
+.footer-brand {
+    text-align: left;
+}
+
 .footer-brand .logo {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -1635,6 +1639,7 @@ footer p {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-left: 0;
 }
 
 .footer-brand p {
@@ -1642,6 +1647,8 @@ footer p {
     line-height: 1.6;
     font-size: 1rem;
     max-width: 350px;
+    margin: 0;
+    /* Reset margin to ensure no auto centering */
 }
 
 .footer-links h3,
