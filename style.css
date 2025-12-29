@@ -817,25 +817,33 @@ footer p {
     }
 
     .hero .container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        padding-top: 4rem;
+        padding-top: 6rem;
+        gap: 3rem;
+        width: 100%;
         overflow: hidden;
     }
 
     .hero-content {
+        order: 2;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .hero-description {
-        margin: 0 auto 2rem;
-    }
-
     .hero-title {
         font-size: 2.8rem;
         word-break: break-word;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+        margin: 0 auto 2rem;
+        font-size: 1.1rem;
     }
 
     .hero-btns {
@@ -843,6 +851,7 @@ footer p {
         flex-direction: column;
         width: 100%;
         max-width: 280px;
+        gap: 1rem;
     }
 
     .hero-btns .btn {
@@ -850,32 +859,41 @@ footer p {
     }
 
     .hero-image {
-        order: -1;
+        order: 1;
         width: 100%;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        flex-direction: column;
     }
 
     .blob-wrapper {
-        width: 250px;
-        height: 250px;
-        margin: 0 auto;
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
     }
 
     .blob {
-        filter: blur(30px);
+        filter: blur(40px);
+        opacity: 0.4;
     }
 
     .code-card {
         position: relative !important;
         width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
+        max-width: 340px;
+        margin: 0 auto !important;
         inset: auto !important;
         transform: none !important;
         animation: float-mobile 6s ease-in-out infinite;
+        left: 0 !important;
+        z-index: 5;
     }
 
     @keyframes float-mobile {
