@@ -1093,7 +1093,8 @@ footer p {
         flex-direction: column;
         width: 100%;
         max-width: 280px;
-        gap: 1rem;
+        gap: 1.2rem;
+        margin-top: 2rem;
     }
 
     .hero-btns .btn {
@@ -1103,27 +1104,12 @@ footer p {
     .hero-image {
         order: 1;
         width: 100%;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
         flex-direction: column;
-    }
-
-    .blob-wrapper {
-        position: absolute;
-        width: 280px;
-        height: 280px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-    }
-
-    .blob {
-        filter: blur(40px);
-        opacity: 0.4;
     }
 
     .code-card {
@@ -1156,6 +1142,10 @@ footer p {
 
     .section {
         padding: 60px 0;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 }
 
@@ -1258,8 +1248,10 @@ footer p {
     }
 
     .hero-meta {
-        justify-content: center;
-        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
     }
 
     .project-header {
@@ -1284,6 +1276,10 @@ footer p {
 
     .contact-form .btn {
         width: 100%;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 }
 
